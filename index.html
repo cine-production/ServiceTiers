@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalSkillSwap</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="loader-page"><p>Chargement de vos films préférés...</p>
+    <div class="loader-container">
+      <div class="loader-counter">
+        <div class="container">
+            <div class="loader">
+                <div class="ball"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <header>
+        <div class="logo">
+            <h1>GlobalSkillSwap</h1>
+        </div>
+        <!--<form action="/rechercher" method="get">
+            <input type="text" name="q" placeholder="Rechercher..." />
+            <button type="submit">Rechercher</button>
+        </form>-->
+    </header>
+    <h1 class="textCPDT">CINÉ<br>PRODUCTION</h1>
+    <p class="soustitreCPDT">Regarde tes films préférés</p>
+        <nav class="TF">
+            <ul>
+                <li><a href="#" id="action">ACTION</a></li>
+                <li><a href="#" id="aventure">AVENTURE</a></li>
+                <li><a href="#" id="comedie">COMEDIE</a></li>
+                <li><a href="#" id="drame">DRAME</a></li>
+                <li><a href="#" id="fantastique">FANTASTIQUE</a></li>
+                <li><a href="#" id="horreur">HORREUR</a></li>
+                <li><a href="#" id="policier">POLICIER</a></li>
+                <li><a href="#" id="science-fiction">SCIENCE-FICTION</a></li>
+                <li><a href="#" id="thriller">THRILLER</a></li>
+            </ul>
+        </nav>
+    <input type="text" id="searchInput" placeholder="Rechercher..." oninput="searchMovies()" />
+    <div class="movie-container" id="movieContainer">
+        <div class="movie-poster" onclick="openMoviePage('movie1.html')">
+            <img src="https://www.themoviedb.org/t/p/original/3e67tijvz5SRpqikly8btPvopO7.jpg" alt="Affiche du film 1" />
+            <div class="movie-title">Insidious: The Red Door (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('page_film/film.html')">
+            <img src="https://www.themoviedb.org/t/p/original/vP4t7DynrGPNwhXX8Z7Guq9FpS3.jpg" alt="Affiche du film 2" />
+            <div class="movie-title">La Petite Sirène (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('movie3.html')">
+            <img src="https://www.themoviedb.org/t/p/original/kIHEPNYLWnG2fSwsAPmJkHdwce6.jpg" alt="Affiche du film 3" />
+            <div class="movie-title">The Flash (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('movie4.html')">
+            <img src="https://www.themoviedb.org/t/p/original/kq6AYN96FjWSZQVRYpAPmBAVq2s.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Transformers : Rise of the Beasts (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('movie1.html')">
+            <img src="https://www.themoviedb.org/t/p/original/aaGDsYYjltMxrwgs4qnHse4qlGX.jpg" alt="Affiche du film 1" />
+            <div class="movie-title">Les Gardiens de la Galaxie : Volume 3 (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('movie2.html')">
+            <img src="https://www.themoviedb.org/t/p/original/7Br9F8EHrtNT2hFgD5oTfDMRgud.jpg" alt="Affiche du film 2" />
+            <div class="movie-title">Fast & Furious X (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('movie3.html')">
+            <img src="https://www.themoviedb.org/t/p/original/jAMVKvqxdNbUY2YQWhCclYI6coP.jpg" alt="Affiche du film 3" />
+            <div class="movie-title">John Wick : Chapitre 4 (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+        <div class="movie-poster" onclick="openMoviePage('https://maxtrab.com/qxh9dw4a1k/b/maxtrab/10752512217')">
+            <img src="https://www.themoviedb.org/t/p/original/ahMxyHMSJXingQr4yJBMzMU9k42.jpg" alt="Affiche du film 4" />
+            <div class="movie-title">Super Mario Bros. le film (2023) <font color="#404040"><i>HD</i></font></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      function openMoviePage(movieUrl) {
+        window.open(movieUrl, '_blank');
+      }
+    </script>
+    <script>
+      function searchMovies() {
+    var input, filter, moviePosters, title, i, movieContainer;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    moviePosters = document.getElementsByClassName('movie-poster');
+    movieContainer = document.getElementById('movieContainer');
+
+    for (i = 0; i < moviePosters.length; i++) {
+        title = moviePosters[i].getElementsByClassName('movie-title')[0].innerText.toUpperCase();
+
+        if (title.includes(filter)) {
+            moviePosters[i].style.opacity = '1';
+            moviePosters[i].style.display = 'block';
+             // Effet de glissement, réinitialiser la marge
+        } else {
+            moviePosters[i].style.opacity = '0'; // Effet de fondu en changeant l'opacité à 0
+            moviePosters[i].style.display = 'none';
+             // Effet de glissement, déplacer l'affiche hors de la vue
+        }
+    }
+
+    // Réorganiser les affiches pour combler l'espace
+    adjustMovieLayout();
+}
+    </script>
+
+<footer class="footer-distributed">
+            <div class="footer-right">
+               <p>Pour nous demander un nouveau film, envoyez un e-mail à : <a href="mailto:adimarcel67@gmail.com">adimarcel67@gmail.com</a></p>
+            </div>
+            <div class="footer-left">
+
+                <p class="footer-links">
+                    <a class="link-1" href="#">Home</a>
+
+                    <a href="#">Blog</a>
+
+                    <a href="#">Pricing</a>
+
+                    <a href="#">About</a>
+
+                    <a href="#">Faq</a>
+
+                    <a href="#">Contact</a>
+                </p>
+
+                <p>Ciné Production &copy; 2023</p>
+            </div>
+
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>
