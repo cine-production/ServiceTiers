@@ -483,7 +483,7 @@ body{
     height: 45px;
     overflow: hidden;
     border-radius: 50%;
-    background-image: url(/images/avatar/defaultAvatar.jpeg);
+    background-image: url(images/avatar/defaultAvatar.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     border-color: #ffffff;
