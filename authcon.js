@@ -25,7 +25,7 @@ loginForm.addEventListener('submit', async (e) => {
         console.log('Utilisateur connecté:', user);
 
         // Rediriger l'utilisateur vers le site internet (index.html)
-        window.location.href = 'index.html';
+        window.location.href = 'choisir_avatar.html';
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
