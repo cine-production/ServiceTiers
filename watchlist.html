@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineProd - des films à volonté</title>
+    <script type="module" src="authcon.js"></script>
+    <script type="module" src="userstate.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images/logo_night.png" type="image/x-icon">
+</head>
+<body>
+    
+<nav class="navbar">
+    <img src="images/logo_night.png" class="brand-logo" alt="">
+    <ul class="nav-links">
+        <li class="nav-items">
+            <a href="#">
+                <img src="images/home.png" alt=""> HOME
+            </a>
+        </li>
+        <li class="nav-items">
+            <a href="#">
+                <img src="images/search.png" alt=""> SEARCH
+            </a>
+        </li>
+        <li class="nav-items">
+            <a href="#">
+                <img src="images/plus.png" alt=""> WATCHLIST
+            </a>
+        </li>
+    </ul>
+    <div class="right-container" id="auth-container">
+        
+    </div>
+</nav>
+
+<h1 class="title">Recommandé pour vous</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+       <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+             
+        </div>
+   </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js"></script>
+    
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+    <script src="userstate.js"></script>
+
+</body>
+</html>
