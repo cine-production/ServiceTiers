@@ -20,15 +20,15 @@
             </a>
         </li>
         <li class="nav-items">
-            <a href="#">
+            <a href="/search.html">
                 <img src="images/search.png" alt=""> SEARCH
             </a>
         </li>
-        <li class="nav-items">
+        <!--<li class="nav-items">
             <a href="#">
-                <img src="images/plus.png" alt=""> WATCHLIST
+                <img src="images/plus.png" alt=""> 
             </a>
-        </li>
+        </li>-->
     </ul>
     <div class="right-container" id="auth-container">
         
@@ -80,7 +80,7 @@
                 <div class="card-body">
                     <h2 class="name">movie name</h2>
                     <h6 class="des">Lorem ipsum dolor sit amet consectetur.</h6>
-                    <button class="watchlist-btn">add to watchlist</button>
+                    <button class="watchlist-btn">regarder le film</button>
                 </div>
             </div> </a>
             <div class="card">
@@ -239,48 +239,7 @@
     <script src="app.js"></script>
     <script src="userstate.js"></script>
 
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyCkoEUIbWVkzscJEPxM5thSG2TtYol5MyQ",
-  authDomain: "cineproduction.firebaseapp.com",
-  projectId: "cineproduction",
-  storageBucket: "cineproduction.appspot.com",
-  messagingSenderId: "359535088144",
-  appId: "1:359535088144:web:fc43855445d11a369fb095",
-  measurementId: "G-9Z2YZTZDNP"
-        };
-    
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-    
-        // Gestion des clics sur les boutons Watchlist
-        const watchlistButtons = document.querySelectorAll('.watchlist-btn');
-    
-        watchlistButtons.forEach(button => {
-            button.addEventListener('click', async () => {
-                const card = button.closest('.card');
-                const movieName = card.querySelector('.name').textContent;
-                
-                try {
-                    const watchlistRef = database.ref('watchlist');
-                    const snapshot = await watchlistRef.child(movieName).once('value');
-                    const isWatched = snapshot.val();
-                    
-                    if (isWatched) {
-                        // Retirer de la watchlist
-                        await watchlistRef.child(movieName).remove();
-                        console.log(`${movieName} retiré de la watchlist`);
-                    } else {
-                        // Ajouter à la watchlist
-                        await watchlistRef.child(movieName).set(true);
-                        console.log(`${movieName} ajouté à la watchlist`);
-                    }
-                } catch (error) {
-                    console.error('Erreur:', error);
-                }
-            });
-        });
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
 </body>
 </html>
