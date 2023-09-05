@@ -123,7 +123,11 @@
         // Utiliser un avatar personnalisé
         customAvatarButton.addEventListener('click', () => {
             // Activer le bouton "Terminer"
-            finishButton.disabled = false;
+            //finishButton.disabled = false;
+        });
+
+        customAvatarButton.addEventListener('click', () => {
+            window.location.href = 'index.html'
         });
 
         // Mettre à jour l'avatar et rediriger vers index.html
