@@ -118,6 +118,7 @@
         // Ajout de l'événement de clic à chaque bouton
         uploadDefaultAvatarButtons.forEach(button => {
             button.addEventListener('click', updateDefaultAvatar);
+            window.location.href = 'index.html'
         });
 
         // Utiliser un avatar personnalisé
@@ -126,9 +127,7 @@
             //finishButton.disabled = false;
         });
 
-        finishButton.addEventListener('click', () => {
-            window.location.href = 'index.html'
-        });
+        
 
         // Mettre à jour l'avatar et rediriger vers index.html
         finishButton.addEventListener('click', async () => {
@@ -147,6 +146,10 @@
 
         // Bouton de retour en arrière
         backButton.addEventListener('click', () => {
+            // Rediriger vers index.html
+            window.location.href = 'index.html';
+        });
+        finishButton.addEventListener('click', () => {
             // Rediriger vers index.html
             window.location.href = 'index.html';
         });
