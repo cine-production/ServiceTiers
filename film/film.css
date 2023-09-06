@@ -72,7 +72,7 @@ body {
 }
 
 /* Styliser l'icône d'horloge à côté de la durée */
-.duration img {
+.film-duration img {
     display: inline-block;
     vertical-align: sub;
     margin-right: 8px; /* Espacement entre l'image et la durée */
