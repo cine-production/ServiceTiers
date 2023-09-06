@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nom du Film</title>
+    <link rel="stylesheet" href="film.css">
+</head>
+<body>
+    <div id="film-banner">
+        <!-- Bannière du film -->
+        <img src="https://cestquoilecinema.fr/wp-content/uploads/2023/05/LA-PETITE-SIRENE.jpg" alt="Nom du Film">
+    </div>
+
+    <div id="film-content">
+        <!-- Fond bleu avec le titre et les boutons -->
+        <div class="film-overlay">
+            <h1 class="film-title">Nom du Film</h1>
+            <div class="film-buttons">
+                <button class="play-button">
+                    <img src="/images/play2.png" alt="Symbole de lecture">
+                    LECTURE
+                </button>
+                <button class="download-button">
+                    <img src="/images/download.png" alt="Symbole de téléchargement">
+                    TELECHARGER
+                </button>
+            </div>
+            <p class="film-description">
+                Description du film ici...
+            </p>
+            <p class="film-duration">
+                
+                <img src="/images/time.pn" alt="Icône d'horloge">: 2h 30min
+                <!-- Ajoutez ici l'icône pour la durée -->
+            </p>
+        </div>
+    </div>
+
+    <!-- Lecture vidéo en arrière-plan -->
+    <video autoplay muted loop id="background-video">
+        <source src="/videos/disney.mp4" type="video/mp4">
+        Votre navigateur ne prend pas en charge la vidéo HTML5.
+    </video>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var banner = document.getElementById("film-banner");
+                banner.style.opacity = "0"; // Affiche la vidéo
+            }, 3000); // 3000 millisecondes (3 secondes)
+            setTimeout(function () {
+                var video = document.getElementById("background-video");
+                video.style.zIndex = "-2";
+                video.style.opacity = "1"; // Affiche la vidéo
+            }, 5000); // 3000 millisecondes (3 secondes)
+            setTimeout(function () {
+                var content = document.getElementById("film-content");
+                content.style.opacity = "0"; // Affiche la vidéo
+            }, 10000); // 3000 millisecondes (3 secondes)
+        });
+
+    </script>
+</body>
+</html>
