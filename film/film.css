@@ -106,7 +106,7 @@
 
 .play-button:hover {
     background-color: #eee;
-    transform: scaleY(1.1);
+    transform: scale(1.1);
 }
 
 .download-button:hover {
