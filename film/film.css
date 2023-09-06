@@ -64,7 +64,7 @@
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
-    animation: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 .download-button {
@@ -113,9 +113,9 @@
 }
 
 .film-description {
-    font-size: 18px;
+    font-size: initial;
     margin-top: 20px;
-    max-width: 70%;
+    max-width: 90%;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 800;
 }
