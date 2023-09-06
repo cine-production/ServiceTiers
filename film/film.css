@@ -75,7 +75,7 @@ body {
     margin-right: 0px;
 }
 
-.download-button img {
+.play-button, .download-button {
     margin-right: 8px;
 }
 
