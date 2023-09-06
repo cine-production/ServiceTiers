@@ -1,5 +1,8 @@
  /* Styles pour la page de film */
-body {
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+
+ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Empêche les barres de défilement */
@@ -61,6 +64,8 @@ body {
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
 }
 
 .download-button {
@@ -112,11 +117,15 @@ body {
     font-size: 18px;
     margin-top: 20px;
     max-width: 70%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
 }
 
 .film-duration {
     font-size: 16px;
     margin-top: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
 }
 
 #background-video {
