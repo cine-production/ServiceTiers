@@ -64,8 +64,7 @@
     margin-right: 10px;
     cursor: pointer;
     border-radius: 5px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 500;
+    animation: 0.5s ease-in-out;
 }
 
 .download-button {
@@ -118,12 +117,12 @@
     margin-top: 20px;
     max-width: 70%;
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .film-duration {
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 13px;
+    margin-top: 12px;
     font-family: 'Nunito Sans', sans-serif;
     font-weight: 200;
 }
