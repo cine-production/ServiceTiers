@@ -74,10 +74,10 @@ body {
 /* Styliser l'icône d'horloge à côté de la durée */
 .duration img {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: sub;
     margin-right: 8px; /* Espacement entre l'image et la durée */
-    width: 16px; /* Largeur souhaitée */
-    height: 16px; /* Hauteur souhaitée */
+    width: 11px; /* Largeur souhaitée */
+    height: 11px; /* Hauteur souhaitée */
 }
 
 
