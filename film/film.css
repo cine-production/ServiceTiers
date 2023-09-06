@@ -1,0 +1,109 @@
+/* Styles pour la page de film */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Empêche les barres de défilement */
+    background-color: #000; /* Fond noir pour la vidéo */
+}
+
+#film-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: -2;
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+#film-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajoutez d'autres styles pour la bannière ici */
+}
+
+#film-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 6s ease-in-out;
+    opacity: 1;
+}
+
+.film-overlay {
+    background: linear-gradient(to top, #000 60%, transparent 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+.film-title {
+    font-size: 36px;
+    margin: 0;
+}
+
+.film-buttons {
+    margin-top: 10px;
+}
+
+.play-button, .download-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Centrer les images à gauche dans les boutons */
+.film-buttons button img {
+    display: inline-block;
+    vertical-align: sub;
+    margin-right: 8px; /* Espacement entre l'image et le texte */
+    width: 16px; /* Largeur souhaitée */
+    height: 16px; /* Hauteur souhaitée */
+}
+
+/* Styliser l'icône d'horloge à côté de la durée */
+.duration img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; /* Espacement entre l'image et la durée */
+    width: 16px; /* Largeur souhaitée */
+    height: 16px; /* Hauteur souhaitée */
+}
+
+
+.play-button:hover, .download-button:hover {
+    background-color: #eee;
+}
+
+.film-description {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.film-duration {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    transition: 1.2s ease-in-out;
+    opacity: 0;
+}
+
