@@ -49,6 +49,7 @@
 
 .film-title {
     margin: 0;
+    max-width: 85%;
 }
 
 .film-buttons {
