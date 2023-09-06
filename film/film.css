@@ -66,7 +66,6 @@ body {
     background-color: #4c4c4c;
     padding: 7px;
     border-radius: 50%;
-    width: 6vh;
     border-style: solid;
     border-color: aliceblue;
     border-width: 2px;
@@ -76,11 +75,15 @@ body {
     margin-right: 0px;
 }
 
+.download-button img {
+    margin-right: 8px;
+}
+
 /* Centrer les images à gauche dans les boutons */
 .film-buttons button img {
     display: inline-block;
     vertical-align: sub;
-    margin-right: 8px; /* Espacement entre l'image et le texte */
+     /* Espacement entre l'image et le texte */
     width: 16px; /* Largeur souhaitée */
     height: 16px; /* Hauteur souhaitée */
 }
