@@ -60,6 +60,7 @@ body {
     padding: 10px 20px;
     margin-right: 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .download-button {
@@ -98,8 +99,13 @@ body {
 }
 
 
-.play-button:hover, .download-button:hover {
+.play-button:hover {
     background-color: #eee;
+    transform: scaleY(1.1);
+}
+
+.download-button:hover {
+    background-color: #222222;
 }
 
 .film-description {
