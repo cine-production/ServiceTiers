@@ -45,8 +45,8 @@ body {
 }
 
 .film-title {
-    font-size: 36px;
     margin: 0;
+    max-width: 30%;
 }
 
 .film-buttons {
