@@ -62,6 +62,10 @@ body {
     cursor: pointer;
 }
 
+.download-button {
+    background-color: #000;
+}
+
 /* Centrer les images à gauche dans les boutons */
 .film-buttons button img {
     display: inline-block;
