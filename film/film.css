@@ -39,7 +39,7 @@ body {
 }
 
 .film-overlay {
-    background: linear-gradient(to top, #000 60%, transparent 100%);
+    background: linear-gradient(to top, #222222 60%, transparent 100%);
     color: #fff;
     padding: 20px;
 }
