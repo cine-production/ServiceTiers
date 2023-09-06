@@ -74,7 +74,7 @@ body {
 /* Styliser l'icône d'horloge à côté de la durée */
 .film-duration img {
     display: inline-block;
-    vertical-align: sub;
+    vertical-align: middle;
     margin-right: 8px; /* Espacement entre l'image et la durée */
     width: 11px; /* Largeur souhaitée */
     height: 11px; /* Hauteur souhaitée */
