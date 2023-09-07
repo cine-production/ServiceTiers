@@ -62,5 +62,6 @@ h1 {
     text-decoration: none;
     color: #ffffff;
     margin: 10px;
+    rotate: 180deg;
 }
 
