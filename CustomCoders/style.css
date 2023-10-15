@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url(APlight.png);
+    background-image: url(/APlight.png);
     background-color: #000000;
     background-size: cover;
     overflow: hidden;
