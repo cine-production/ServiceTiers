@@ -5,37 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choisissez votre plan</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Readex+Pro&display=swap');
         body {
             font-family: Arial, sans-serif;
         }
         .container {
             text-align: center;
-            margin: 20px;
+            margin: 40px;
         }
         .pricing {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: stretch; /* Les div des plans auront la même hauteur */
         }
         .price-card {
             border: 1px solid #ccc;
-            padding: 20px;
-            margin: 10px;
+            padding: 1rem;
             text-align: center;
             flex: 1; /* Les div auront la même largeur */
+            min-height: 55vh;
         }
-        .price-card h2 {
-            font-size: 24px;
+        h2 {
+            font-size: 1.4rem;
+    background-color: #ffffff26;
+    color: #9E9C26;
+    padding: 10px 0;
+    margin-bottom: auto;
+    backdrop-filter: blur(1px);
+    font-family: 'Poppins', sans-serif;
+        }
+        .price-card .price {
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: #4DB1C1;
+            font-family: 'Readex Pro', sans-serif;
         }
         .price-card p {
             font-size: 18px;
         }
-        .price-card button {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
+        .price-card .advantage {
+            display: flex;
+            align-items: center;
+        }
+        .price-card .advantage span {
+            margin-right: 5px;
+            color: #008000; /* Vert */
+        }
+        .price-button {
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+        }
+        .price-button button {
+            background-color: #4DB1C1;
+    color: #fff;
+    padding: 0.5rem 2.3rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 50rem;
+    font-size: 0.7rem;
+    max-width: 10rem;
+    padding-left: 0.5rem;
+    min-width: 10rem;
+    font-family: 'Poppins', sans-serif;
+        }
+        .price-button .round-image {
+            background-color: #ffffff;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 8rem;
+        }
+        .price-button .round-image img {
+            width: 1.5rem;
         }
         #annual-option {
             display: none;
@@ -46,116 +94,205 @@
             visibility: hidden;
         }
 
+        .switch-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .switch-container span {
+            font-size: 1rem;
+        }
+
+        .switch-container .annuel-text {
+            color: black;
+        }
+
         label.switch-label {
             cursor: pointer;
-            text-indent: -9999px;
-            width: 50px; /* Largeur réduite */
-            height: 25px; /* Hauteur réduite */
-            background: grey;
-            display: block;
-            border-radius: 100px;
-            position: relative;
-            margin: 0 auto; /* Centrer horizontalement */
+    text-indent: -9999px;
+    width: 3rem;
+    height: 1.6rem;
+    background: #E12876;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin-right: 0.5rem;
         }
 
         label.switch-label:after {
             content: '';
             position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 15px; /* Largeur réduite */
-            height: 15px; /* Hauteur réduite */
-            background: #fff;
-            border-radius: 100%; /* Utiliser le border-radius pour créer un cercle */
-            transition: 0.3s;
+    top: 2.5px;
+    left: 2px;
+    width: 1.3rem;
+    height: 1.3rem;
+    background: #fff;
+    border-radius: 100%;
+    transition: 0.3s;
         }
 
         input[type=checkbox]:checked + label.switch-label {
-            background: #bada55;
+            background: #E12876;
         }
 
         input[type=checkbox]:checked + label.switch-label:after {
-            left: calc(100% - 20px);
+            left: calc(100% - 1.4rem);
         }
 
         label.switch-label:active:after {
             width: 20px; /* Largeur augmentée en action */
             height: 20px; /* Hauteur augmentée en action */
-            left: calc(100% - 10px);
+            left: calc(10% - 0rem);
+        }
+        .prix {
+            min-width: 20%;
+            max-width: 20%;
+        }
+        .plan-title {
+            text-align: left;
+            margin-left: 4rem;
+            color: #9E9C26;
+            font-family: 'Poppins', sans-serif;
+            filter: drop-shadow(1px 1px 1px #9E9C26);
+            font-size: x-large;
+        }
+        .mensuel-text {
+            color: #E12876;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Choisissez votre plan</h1>
-        <input type="checkbox" id="billing-switch" />
-        <label for="billing-switch" class="switch-label">Toggle</label>
+        <h1 class="plan-title" id="plan-title">Nos abonnements mensuels</h1>
+        <div class="switch-container">
+            <span class="mensuel-text">Mensuel</span>
+            <input type="checkbox" id="billing-switch" />
+            <label for="billing-switch" class="switch-label">Toggle</label>
+            <span class="annuel-text">Annuel (Obtenez 2 mois gratuits)</span>
+        </div>
         <div class="pricing" id="monthly-option">
-            <div class="price-card">
-                <h2>Prix Mensuel Standard</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $10/mois</p>
-                <button>Choisir le plan</button>
+            <div class="prix">
+                <h2>HOW PASS</h2>
+                <div class="price-card">
+                        <div class="price">9,90€/mois</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre HOW PASS</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
-            <div class="price-card">
-                <h2>Prix Mensuel Premium</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $20/mois</p>
-                <button>Choisir le plan</button>
+            <!-- Ajoutez les autres cartes de prix mensuelles ici -->
+            <div class="prix">
+                <h2>OFFRE PARTENAIRE</h2>
+                <div class="price-card">
+                        <div class="price">49€/mois</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre PARTENAIRE</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
-            <div class="price-card">
-                <h2>Prix Mensuel Pro</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $30/mois</p>
-                <button>Choisir le plan</button>
+            <div class="prix">
+                <h2>OFFRE SOUTIENT +</h2>
+                <div class="price-card">
+                        <div class="price">89€/mois</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre SOUTIENT +</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="pricing" id="annual-option">
-            <div class="price-card">
-                <h2>Prix Annuel Standard</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $100/an</p>
-                <button>Choisir le plan</button>
+            <div class="prix">
+                <h2>HOW PASS</h2>
+                <div class="price-card">
+                        <div class="price">$100/an</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre HOW PASS</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
-            <div class="price-card">
-                <h2>Prix Annuel Premium</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $200/an</p>
-                <button>Choisir le plan</button>
+            <!-- Ajoutez les autres cartes de prix annuelles ici -->
+            <div class="prix">
+                <h2>OFFRE PARTENAIRE</h2>
+                <div class="price-card">
+                        <div class="price">$100/an</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre PARTENAIRE</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
-            <div class="price-card">
-                <h2>Prix Annuel Pro</h2>
-                <p>Avantage 1</p>
-                <p>Avantage 2</p>
-                <p>Avantage 3</p>
-                <p>Prix : $300/an</p>
-                <button>Choisir le plan</button>
+            <div class="prix">
+                <h2>OFFRE SOUTIENT +</h2>
+                <div class="price-card">
+                        <div class="price">$100/an</div>
+                            <p class="advantage"><span>&#10004;</span>Avantage 1</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 2</p>
+                            <p class="advantage"><span>&#10004;</span>Avantage 3</p>
+                        </div>
+                        <div class="price-button">
+                            <button>Joindre SOUTIENT +</button>
+                            <div class="round-image">
+                        <img src="https://icones.pro/wp-content/uploads/2021/06/symbole-fleche-droite-bleu.png" alt="Image">
+                    </div>
+                </div>
             </div>
         </div>
+        
     </div>
 
     <script>
         const billingSwitch = document.getElementById("billing-switch");
         const monthlyOption = document.getElementById("monthly-option");
         const annualOption = document.getElementById("annual-option");
+        const planTitle = document.getElementById("plan-title");
+        const mensuelText = document.querySelector(".mensuel-text");
+        const annuelText = document.querySelector(".annuel-text");
 
         billingSwitch.addEventListener("change", function() {
             if (billingSwitch.checked) {
                 monthlyOption.style.display = "none";
                 annualOption.style.display = "flex";
+                planTitle.textContent = "Nos abonnements annuels";
+                mensuelText.style.color = "black";
+                annuelText.style.color = "#E12876";
             } else {
                 monthlyOption.style.display = "flex";
                 annualOption.style.display = "none";
+                planTitle.textContent = "Nos abonnements mensuels";
+                mensuelText.style.color = "#E12876";
+                annuelText.style.color = "black";
             }
         });
     </script>
