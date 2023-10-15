@@ -16,8 +16,8 @@ closeModalButton.addEventListener('click', () => {
 checkPasswordButton.addEventListener('click', () => {
     const password = passwordInput.value;
 
-    if (password === 'salut123') {
-        window.location.href = 'page1.html'; // Rediriger vers la première page
+    if (password === 'JulieVogt123') {
+        window.location.href = 'https://cine-production.github.io/ServiceTiers/lienClient/JulieVogt/'; // Rediriger vers la première page
     } else if (password === 'ent123') {
         window.location.href = 'page2.html'; // Rediriger vers la deuxième page
     } else {
