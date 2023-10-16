@@ -11,7 +11,6 @@ body {
     background-color: #000000;
     background-size: cover;
     overflow: hidden;
-    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -33,6 +32,7 @@ body {
     box-shadow: 0 0 20px rgba(82, 82, 82, 0.4);
     backdrop-filter: blur(15px);
     min-width: 95%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .bottom-blocks {
@@ -40,6 +40,7 @@ body {
     justify-content: space-around;
     width: 100%;
     margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .bottom-block {
@@ -51,6 +52,7 @@ body {
     box-shadow: 0 0 20px rgba(82, 82, 82, 0.4);
     overflow: auto;
     backdrop-filter: blur(15px);
+    font-family: 'Poppins', sans-serif;
 }
 
 ul {
@@ -58,6 +60,7 @@ ul {
     list-style: none;
     color: #01ECF3;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
 li {
@@ -67,16 +70,19 @@ li {
 h1, h2 {
     color: #f27d42;
     font-family: cursive;
+    font-family: 'Poppins', sans-serif;
 }
 p {
     color: #da107b;
     font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
     text-decoration: none;
     color: blueviolet;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
 .modal {
@@ -114,4 +120,5 @@ button {
     border-radius: 3px;
     border-style: none;
     cursor: pointer;
+    font-family: 'Poppins', sans-serif;
 }
