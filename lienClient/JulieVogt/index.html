@@ -12,7 +12,7 @@
         }
         .container {
             text-align: center;
-            margin: 40px;
+            margin: 1vw;
         }
         .pricing {
             display: flex;
@@ -21,33 +21,34 @@
         }
         .price-card {
             border: 1px solid #ccc;
-            padding: 1rem;
+            padding: 1.3vw;
             text-align: center;
             flex: 1; /* Les div auront la même largeur */
             min-height: 55vh;
         }
         h2 {
-            font-size: 1.4rem;
-    background-color: #ffffff26;
+            font-size: 1.7vw;
+    background-color: #ffffff4d;
     color: #9E9C26;
-    padding: 10px 0;
+    padding: 1vw 0;
     margin-bottom: auto;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(2px);
     font-family: 'Poppins', sans-serif;
         }
         .price-card .price {
-            font-size: 2rem;
+            font-size: 2.3vw;
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
             color: #4DB1C1;
             font-family: 'Readex Pro', sans-serif;
         }
         .price-card p {
-            font-size: 18px;
+            font-size: 12px;
         }
         .price-card .advantage {
             display: flex;
             align-items: center;
+            font-size: 1vw;
         }
         .price-card .advantage span {
             margin-right: 5px;
@@ -62,29 +63,29 @@
         .price-button button {
             background-color: #4DB1C1;
     color: #fff;
-    padding: 0.5rem 2.3rem;
+    padding: 0.4vw 2.2vw;
     border: none;
     cursor: pointer;
     border-radius: 50rem;
-    font-size: 0.7rem;
-    max-width: 10rem;
-    padding-left: 0.5rem;
-    min-width: 10rem;
+    font-size: 0.7vw;
+    max-width: 9.7vw;
+    padding-left: 0.5vw;
+    min-width: 9.7vw;
     font-family: 'Poppins', sans-serif;
         }
         .price-button .round-image {
             background-color: #ffffff;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.5vw;
+    height: 1.5vw;
     display: flex;
     align-items: center;
     border-radius: 50%;
     position: absolute;
-    margin-left: 8rem;
+    margin-left: 8vw;
     justify-content: center;
         }
         .price-button .round-image img {
-            width: 1.2rem;
+            width: 1.2vw;
             transform: rotate(-45deg);
         }
         #annual-option {
@@ -105,7 +106,7 @@
         }
 
         .switch-container span {
-            font-size: 1rem;
+            font-size: 1.3vw;
         }
 
         .switch-container .annuel-text {
@@ -115,8 +116,8 @@
         label.switch-label {
             cursor: pointer;
     text-indent: -9999px;
-    width: 3rem;
-    height: 1.6rem;
+    width: 4vw;
+    height: 2vw;
     background: #E12876;
     display: block;
     border-radius: 100px;
@@ -127,10 +128,10 @@
         label.switch-label:after {
             content: '';
             position: absolute;
-    top: 2.5px;
-    left: 2px;
-    width: 1.3rem;
-    height: 1.3rem;
+    top: 0.15vw;
+    left: 0.15vw;
+    width: 1.7vw;
+    height: 1.7vw;
     background: #fff;
     border-radius: 100%;
     transition: 0.3s;
@@ -141,12 +142,11 @@
         }
 
         input[type=checkbox]:checked + label.switch-label:after {
-            left: calc(100% - 1.4rem);
+            left: calc(100% - 1.85vw);
         }
 
         label.switch-label:active:after {
-            width: 20px; /* Largeur augmentée en action */
-            height: 20px; /* Hauteur augmentée en action */
+            width: 2vw; /* Largeur augmentée en action */
             left: calc(10% - 0rem);
         }
         .prix {
@@ -159,14 +159,28 @@
             color: #9E9C26;
             font-family: 'Poppins', sans-serif;
             filter: drop-shadow(1px 1px 1px #9E9C26);
-            font-size: x-large;
+            font-size: 2.5vw;
         }
         .mensuel-text {
             color: #E12876;
         }
+        .background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 20vw;
+    z-index: -1; /* Placez l'image en arrière-plan */
+    opacity: 25%;
+}
+.description {
+    color: #4DB1C1;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
     </style>
 </head>
 <body>
+    <img class="background-image" src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/75167f0f-7fbd-4add-8498-22141ceea4ad_638330686435984708_.png">
     <div class="container">
         <h1 class="plan-title" id="plan-title">Nos abonnements mensuels</h1>
         <div class="switch-container">
@@ -187,7 +201,7 @@
                         <div class="price-button">
                             <button>Joindre HOW PASS</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -203,7 +217,7 @@
                         <div class="price-button">
                             <button>Joindre PARTENAIRE</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -218,7 +232,7 @@
                         <div class="price-button">
                             <button>Joindre SOUTIENT +</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -227,7 +241,8 @@
             <div class="prix">
                 <h2>HOW PASS</h2>
                 <div class="price-card">
-                        <div class="price">soit 8€/mois</div>
+                        <div class="price">8€/mois</div>
+                        <p class="description">100€ facturé annuellement</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -235,7 +250,7 @@
                         <div class="price-button">
                             <button>Joindre HOW PASS</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
@@ -243,7 +258,8 @@
             <div class="prix">
                 <h2>OFFRE PARTENAIRE</h2>
                 <div class="price-card">
-                        <div class="price">soit 40€/mois</div>
+                        <div class="price">40€/mois</div>
+                        <p class="description">490€ facturé annuellement</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -251,14 +267,15 @@
                         <div class="price-button">
                             <button>Joindre PARTENAIRE</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
             <div class="prix">
                 <h2>OFFRE SOUTIENT +</h2>
                 <div class="price-card">
-                        <div class="price">soit74/mois</div>
+                        <div class="price">soit 74/mois</div>
+                        <p class="description">890€ facturé annuellement</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -266,7 +283,7 @@
                         <div class="price-button">
                             <button>Joindre SOUTIENT +</button>
                             <div class="round-image">
-                        <img src="https://inigoappdata.blob.core.windows.net/tempfilespace/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
+                        <img src="https://d264tuzfk424fk.cloudfront.net/LandingPagePictures/9a4e77f4-e459-48ca-a381-5d1f1a374720_638330347697304578_.png" alt="Image">
                     </div>
                 </div>
             </div>
