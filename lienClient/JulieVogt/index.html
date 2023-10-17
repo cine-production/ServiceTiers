@@ -43,7 +43,7 @@
             font-family: 'Readex Pro', sans-serif;
         }
         .price-card p {
-            font-size: 12px;
+            font-size: 1vw;
         }
         .price-card .advantage {
             display: flex;
@@ -177,6 +177,7 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
+
     </style>
 </head>
 <body>
@@ -194,6 +195,7 @@
                 <h2>HOW PASS</h2>
                 <div class="price-card">
                         <div class="price">9,90€/mois</div>
+                        <p class="description">&nbsp;</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -210,6 +212,7 @@
                 <h2>OFFRE PARTENAIRE</h2>
                 <div class="price-card">
                         <div class="price">49€/mois</div>
+                        <p class="description">&nbsp;</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -225,6 +228,7 @@
                 <h2>OFFRE SOUTIENT +</h2>
                 <div class="price-card">
                         <div class="price">89€/mois</div>
+                        <p class="description">&nbsp;</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 3</p>
@@ -274,7 +278,7 @@
             <div class="prix">
                 <h2>OFFRE SOUTIENT +</h2>
                 <div class="price-card">
-                        <div class="price">soit 74/mois</div>
+                        <div class="price">74/mois</div>
                         <p class="description">890€ facturé annuellement</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 1</p>
                             <p class="advantage"><span>&#10004;</span>Avantage 2</p>
@@ -298,6 +302,7 @@
         const planTitle = document.getElementById("plan-title");
         const mensuelText = document.querySelector(".mensuel-text");
         const annuelText = document.querySelector(".annuel-text");
+        const descriptionElements = document.querySelectorAll(".description");
 
         billingSwitch.addEventListener("change", function() {
             if (billingSwitch.checked) {
@@ -306,12 +311,19 @@
                 planTitle.textContent = "Nos abonnements annuels";
                 mensuelText.style.color = "black";
                 annuelText.style.color = "#E12876";
+                descriptionElements.forEach(function(element) {
+                element.style.display = "block";
+                });
             } else {
                 monthlyOption.style.display = "flex";
                 annualOption.style.display = "none";
+                des1.style.opacity = "1";
                 planTitle.textContent = "Nos abonnements mensuels";
                 mensuelText.style.color = "#E12876";
                 annuelText.style.color = "black";
+                descriptionElements.forEach(function(element) {
+                element.style.display = "none";
+                });
             }
         });
     </script>
