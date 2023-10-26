@@ -63,6 +63,8 @@
             // Sortir du mode plein écran (F11) s'il est activé.
             if (document.fullscreenElement) {
                 document.exitFullscreen();
+                overlay.style.display = "none";
+                videoContainer.style.display = "none";
             }
             // Mettre en plein écran la vidéo.
             videoContainer.requestFullscreen = videoContainer.requestFullscreen || videoContainer.mozRequestFullScreen || videoContainer.webkitRequestFullscreen || videoContainer.msRequestFullscreen;
@@ -76,6 +78,7 @@
         if (!document.fullscreenElement) {
             videoContainer.style.display = "none";
             overlay.style.display = "none";
+            overlay.classList.add("");
         }
     });
 });
