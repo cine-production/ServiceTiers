@@ -200,4 +200,7 @@ video {
     #film-banner {
         height: 78vh;
     }
+    .film-title {
+        max-width: 45%;
+    }
 }
