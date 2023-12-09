@@ -196,3 +196,8 @@ video {
 .hidden {
     display: none;
 }
+@media screen and (max-width:480px) {
+    #film-banner {
+        height: 78vh;
+    }
+}
