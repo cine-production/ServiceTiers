@@ -57,6 +57,18 @@
         button[type="submit"]:hover {
             background-color: #0056b3;
         }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+        .hyperlien {
+    display: flex;
+    justify-content: center;
+}
     </style>
 </head>
 <body>
@@ -67,6 +79,9 @@
             <input type="email" id="email" name="email" placeholder="Email">
             <input type="password" id="password" name="password" placeholder="Mot de passe">
             <button type="submit">S'inscrire</button>
+            <div class="hyperlien">
+                <a href="connexion.html" id="forgot-password-link">Connexion</a>
+            </div>
         </form>
     </div>
     <script type="module" src="auth.js"></script>

@@ -63,6 +63,10 @@
             color: #666;
             text-decoration: none;
         }
+        .hyperlien {
+    display: flex;
+    justify-content: center;
+}
     </style>
 </head>
 <body>
@@ -72,7 +76,12 @@
             <input type="email" id="login-email" name="login-email" placeholder="Email">
             <input type="password" id="login-password" name="login-password" placeholder="Mot de passe">
             <button type="submit">Se connecter</button>
-            <a href="resetmdp.html" id="forgot-password-link">MDP oublié</a>
+            <div class="hyperlien">
+                <a href="resetmdp.html" id="forgot-password-link">MDP oublié</a>
+                <a style="margin: auto 3px 1px 3px;">|</a>
+                <a href="inscription.html" id="forgot-password-link">Inscription</a>
+            </div>
+                <!-- <a href="resetmdp.html" id="forgot-password-link">inscription</a> -->
         </form>
     </div>
     <script type="module" src="authcon.js"></script>
