@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo_night.png" type="image/x-icon">
+    <link rel="icon" href="images/logo_night.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/logo_night.png">
+    <title>Réinitialiser le mot de passe - CineProd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1b1b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="email"] {
+            width: -webkit-fill-available;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type="email"]:focus {
+            border-color: #66afe9;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+        p {
+            text-align: center;
+            font-size: small;
+        }
+        p a {
+            font-size: small;
+            margin: 0;
+            color: #004b9c;
+            display: inline;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="reset-password-form">
+            <h1>Réinitialiser le mot de passe</h1>
+            <p>Cher utilisateur, Notre système de réinitialisation de mot de passe est actuellement en cours de développement. En attendant, veuillez nous contacter à <a href="mailto:contact@cineproduction.fr">contact@cineproduction.fr</a> en nous fournissant l'adresse e-mail associée à votre compte CineProduction pour toute demande de réinitialisation de mot de passe. Merci de votre compréhension.</p>
+            <!-- <p>Entrez votre adresse e-mail pour réinitialiser votre mot de passe.</p>
+            <input type="email" id="reset-password-email" name="reset-password-email" placeholder="Adresse Email">
+            <button type="submit">Envoyer le lien de réinitialisation</button> -->
+            <a href="connexion.html">Retour à la page de connexion</a>
+        </form>
+        <!-- <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js"></script>
+        <script>
+            // Configuration Firebase
+            const firebaseConfig = {
+    apiKey: "AIzaSyCkoEUIbWVkzscJEPxM5thSG2TtYol5MyQ",
+  authDomain: "cineproduction.firebaseapp.com",
+  projectId: "cineproduction",
+  storageBucket: "cineproduction.appspot.com",
+  messagingSenderId: "359535088144",
+  appId: "1:359535088144:web:fc43855445d11a369fb095",
+  measurementId: "G-9Z2YZTZDNP"
+};
+
+            // Initialisation de l'application Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            // Obtention de l'objet authentification
+            const auth = firebase.auth();
+
+            // Gestionnaire d'événement pour le formulaire de réinitialisation de mot de passe
+            document.getElementById('reset-password-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const resetEmail = document.getElementById('reset-password-email').value;
+
+                // Utilisation de sendPasswordResetEmail pour envoyer l'e-mail de réinitialisation
+                auth.sendPasswordResetEmail(resetEmail)
+                    .then(() => {
+                        console.log('E-mail de réinitialisation envoyé avec succès!');
+                        // Redirection de l'utilisateur vers une page de confirmation si nécessaire
+                        window.location.href = 'reset-password-confirmation.html';
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error('Erreur lors de l\'envoi de l\'e-mail de réinitialisation:', errorMessage);
+                    });
+            });
+        </script> -->
+    </div>
+</body>
+</html>
