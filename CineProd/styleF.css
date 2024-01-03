@@ -257,7 +257,6 @@ body{
     outline-offset: 3px;
     outline-width: 0;
     transition: 0.3s ease-in-out;
-    box-shadow: rgba(0, 0, 0, 0.69) 0px 0px 0px -30px, rgba(0, 0, 0, 0.73) 0px 4px 13px 0px;
 }
 
 /*.card::before {
