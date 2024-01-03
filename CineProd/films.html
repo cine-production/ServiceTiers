@@ -43,6 +43,39 @@
 </nav>
 
 
+<h1>Films</h1>
+<div class="dropdown">
+    <button class="dropbtn">Types de Films</button>
+    <div class="dropdown-content">
+        <a href="#">Action</a>
+        <a href="#">Comédie</a>
+        <a href="#">Drame</a>
+        <a href="#">Science-Fiction</a>
+        <a href="#">Animation</a>
+    </div>
+</div>
+
+<div class="film-container">
+    <!-- 5 blocks centrés et espacés -->
+    <div class="film-block"></div>
+    <div class="film-block"></div>
+    <div class="film-block"></div>
+    <div class="film-block"></div>
+    <div class="film-block"></div>
+</div>
+<script>// Fermer le menu déroulant lorsque l'utilisateur clique en dehors
+    document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(function(dropdown) {
+            if (!dropdown.contains(event.target)) {
+                const content = dropdown.querySelector('.dropdown-content');
+                content.style.display = 'none';
+            }
+        });
+    });
+    </script>
+
+
     <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.2.0/firebase-auth.js"></script>
     
