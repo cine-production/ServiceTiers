@@ -20,35 +20,39 @@
         <!-- Fond bleu avec le titre et les boutons -->
         <div class="film-overlay">
             <img class="film-title" src="https://www.universalpictures.fr/tl_files/content/movies/five_nights/title.png" alt="la la-petite-sirene-2023-banniere-scaled"></img>
-            <div class="film-buttons">
-                <button class="play-button" id="lectureBouton">
+            <div class="film-buttons">                
+                <!-- <button class="play-button" id="lectureBouton">
                     <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/play2.png" alt="Symbole de lecture">
                     LECTURE
-                </button>
-                <div id="videoContainer">
-                    <iframe id="videoIframe" width="660" height="437" src="https://tomacloud.com/iframe/ZbsZzMVy6H" scrolling="no" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
-                </div>
-                <div id="overlay" class="hidden"></div>
+                </button> -->
                 <button class="download-button">
                     <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/download2.png" alt="Symbole de téléchargement">
-                    
                 </button>
             </div>
+            
+            
             <p class="film-duration">
                 
                 <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/time.png" alt="Icône d'horloge">: 1h 49min - 2023
                 <!-- Ajoutez ici l'icône pour la durée -->
             </p>
+            
+            
             <p class="film-description">
                 Synopsis. Les années 1830, dans les eaux d'une île fictive des Caraïbes. Ariel, la benjamine des filles du roi Triton, est une jeune sirène belle et fougueuse dotée d'un tempérament d'aventurière. Rebelle dans l'âme, elle n'a de cesse d'être attirée par le monde qui existe par-delà les flots.
             </p>
-            
         </div>
+    </div>
+
+
+    <div id="videoContainer">
+        <iframe id="videoIframe" width="660" height="437" src="https://tomacloud.com/iframe/ZbsZzMVy6H" scrolling="no" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
     </div>
 
     <a href="../index.html" class="back-button">▶</a>
 
-    <script>
+
+    <!-- <script>
         document.getElementById("lectureBouton").addEventListener("click", function() {
     const videoContainer = document.getElementById("videoContainer");
     const overlay = document.getElementById("overlay");
@@ -85,7 +89,7 @@
         }
     });
 });
-    </script>
+    </script> -->
     <!-- Lecture vidéo en arrière-plan -->
     <!--<iframe width="560" id="background-video" height="315" src="https://www.youtube.com/embed/LwsYfpOcIEI?si=Sjx4b3_rk1J4d4mF&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         Votre navigateur ne prend pas en charge la vidéo HTML5.
