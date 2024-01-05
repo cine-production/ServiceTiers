@@ -166,9 +166,6 @@ video {
     padding: 26px;
 }
 
-#videoIframe {
-}
-
 #overlay {
     position: fixed;
     top: 0;
