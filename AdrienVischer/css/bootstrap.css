@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: smaller;
 }
 
 abbr[title],
@@ -589,9 +590,10 @@ pre code {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .no-gutters {
