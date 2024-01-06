@@ -395,7 +395,6 @@ a:focus {
 .shop_section .box .img-box {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -767,6 +766,7 @@ a:focus {
   background-color: #3b4a6b;
   color: #ffffff;
   padding-top: 60px;
+  margin-top: 1rem;
 }
 
 .footer_section h4 {
@@ -915,3 +915,24 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+.moiH4 {
+  margin: 2rem 2rem 0;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.moiH6 {
+  margin: 0.3rem 2rem 0.3rem;
+}
+.moiH6 span {
+  margin: 0;
+  font-weight: 900;
+  color: #4d618c;
+}
+.moiH6H5 {
+  text-align: center;
+  max-width: 10rem;
+  font-weight: 600;
+  margin: 0 2rem;
+  font-style: italic;
+}
