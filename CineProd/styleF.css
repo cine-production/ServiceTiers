@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Avenir-World-for-Disney-Demi;
+    src: url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2-Demi.c737f3bb45822159626cd7952dc1636e.woff2) format("woff2"),url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2-Demi.123aacbf91888b5a9938a7b5d34dae14.woff) format("woff"),url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2-Demi.ed5d20f2783d6e63e42b71ad462367fc.otf) format("opentype")
+}
+
+@font-face {
+    font-family: Avenir-World-for-Disney-Regular;
+    src: url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2.d63aa1080e072dcb10992153d5ebd496.woff2) format("woff2"),url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2.5e639097a47bf799d443d1328b3a9da0.woff) format("woff"),url(https://static-assets.bamgrid.com/fonts/avenir-world-for-disney/AvenirWorldforDisneyv2.3f60d9b095390c1862450e1e1e5f9a62.otf) format("opentype")
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -270,11 +280,21 @@ body{
         font-size: 44px;
         letter-spacing: .11px;
         line-height: 1.2;
+        font-family: Avenir-World-for-Disney-Demi,sans-serif;
+    }
+
+    .dropdown {
+        font-family: Avenir-World-for-Disney-Regular,sans-serif;
+    font-size: 15px;
+    letter-spacing: -.1px;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
     }
 
     .DropTitle {
         display: flex;
-        margin-top: 7vw;
+        margin-top: 16vh;
     }
     
     /* Style du menu déroulant */
@@ -379,13 +399,18 @@ body{
     /* Style des blocs de films */
     .film-container {
         display: flex;
-        justify-content: space-around;
         margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        flex-direction: row-reverse;
     }
     
     .film-block {
-        width: 80px;
-        height: 120px;
+        max-width: 41vh;
+        height: 23vh;
         background-color: #eee;
-        margin: 0 10px;
+        margin: 20px 11px 0 11px;
+        border-radius: 5px;
+        min-width: 41vh;
+        display: flex;
     }
