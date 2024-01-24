@@ -17,22 +17,24 @@
 body{
     width: 100%;
     background: rgb(40,49,76);
-background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, rgba(6,7,10,1) 100%);
+    background: radial-gradient(circle, rgb(25, 28, 40) 0%, rgba(28,33,48,1) 71%, rgba(6,7,10,1) 100%);
     position: relative;
     font-family: roboto, sans-serif;
 }
 
-.navbar{
+.navbar {
     width: 100%;
-    height: 80px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
     padding: 0 4%;
-    background: #0c111b;
+    background: transparent;
     z-index: 9;
     display: flex;
     align-items: center;
+    background: rgb(21,21,21);
+background: linear-gradient(180deg, rgba(21,21,21,1) 0%, rgba(77,77,77,0) 89%);
 }
 
 .brand-logo{
@@ -45,6 +47,9 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     list-style:none;
     margin-left: 25px;
     padding: 0;
+    font-size: small;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .nav-items a{
@@ -114,7 +119,7 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     flex-direction: column; /* Place le texte en dessous de l'image */
     align-items: center;
     height: 19px; /* Ajustez la taille de l'image selon vos besoins */
-    margin-right: 15px; /* Centre horizontalement */
+    margin-right: 5px; /* Centre horizontalement */
 }
 .nav-items a {
     text-decoration: none;
@@ -124,9 +129,9 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     padding-bottom: 5px; /* Espacement entre le texte et le trait */
 }
 .nav-items img {
-    width: 20px; /* Ajustez la taille de l'image selon vos besoins */
-    height: 19px; /* Ajustez la taille de l'image selon vos besoins */
-    margin-right: 15px;
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
 }
 .nav-items a::before {
     content: "";
@@ -213,8 +218,8 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
 }
 
 .avatar-container {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     overflow: hidden;
     border-radius: 50%;
     background-image: url(images/avatar/defaultAvatar.jpeg);
@@ -222,7 +227,7 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     background-size: cover;
     border-color: #ffffff;
     border-width: 1.5px;
-    border-style: solid;
+    border-style: none;
 }
 
 .avatar-container img {
@@ -285,7 +290,7 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     }
 
     .dropdown {
-        font-family: Avenir-World-for-Disney-Regular,sans-serif;
+    font-family: Avenir-World-for-Disney-Regular,sans-serif;
     font-size: 15px;
     letter-spacing: -.1px;
     line-height: 1.6;
@@ -356,6 +361,7 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
         transform: translateY(-50%);
         box-sizing: border-box;
         padding: 0px 0px 0px 16px;
+        font-family: Avenir-World-for-Disney-Regular,sans-serif;
     }
 
     .css-1wy0on6 {
@@ -420,6 +426,14 @@ background: radial-gradient(circle, rgba(40,49,76,1) 0%, rgba(28,33,48,1) 71%, r
     border-radius: 4px;
     height: 9vw;
     cursor: pointer;
+    border-color: transparent;
+    outline-color: transparent;
+    outline-style: solid;
+}
+.film-block:hover {
+    transform: scale(1.05) translateZ(0px);
+    outline-color: #ddd;
+    outline-offset: 0.2vw;
 }
 .hlugew {
     inset: 0px;

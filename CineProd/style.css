@@ -6,19 +6,20 @@
 
 body{
     width: 100%;
-    background: #0c111b;
+    background: rgb(40,49,76);
+    background: radial-gradient(circle, rgb(25, 28, 40) 0%, rgba(28,33,48,1) 71%, rgba(6,7,10,1) 100%);
     position: relative;
     font-family: roboto, sans-serif;
 }
 
-.navbar{
+.navbar {
     width: 100%;
-    height: 80px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
     padding: 0 4%;
-    background: #0c111b;
+    background: transparent;
     z-index: 9;
     display: flex;
     align-items: center;
@@ -33,6 +34,9 @@ body{
     display: flex;
     list-style:none;
     margin-left: 25px;
+    font-size: small;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .nav-items a{
@@ -401,7 +405,7 @@ body{
     flex-direction: column; /* Place le texte en dessous de l'image */
     align-items: center;
     height: 19px; /* Ajustez la taille de l'image selon vos besoins */
-    margin-right: 15px; /* Centre horizontalement */
+    margin-right: 5px; /* Centre horizontalement */
 }
 .nav-items a {
     text-decoration: none;
@@ -411,9 +415,9 @@ body{
     padding-bottom: 5px; /* Espacement entre le texte et le trait */
 }
 .nav-items img {
-    width: 20px; /* Ajustez la taille de l'image selon vos besoins */
-    height: 19px; /* Ajustez la taille de l'image selon vos besoins */
-    margin-right: 15px;
+    width: 16px;
+    height: 15px;
+    margin-right: 9px;
 }
 .nav-items a::before {
     content: "";
@@ -500,8 +504,8 @@ body{
 }
 
 .avatar-container {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     overflow: hidden;
     border-radius: 50%;
     background-image: url(images/avatar/defaultAvatar.jpeg);
@@ -509,7 +513,7 @@ body{
     background-size: cover;
     border-color: #ffffff;
     border-width: 1.5px;
-    border-style: solid;
+    border-style: none;
 }
 
 .avatar-container img {
