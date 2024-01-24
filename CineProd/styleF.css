@@ -398,19 +398,137 @@ body{
     
     /* Style des blocs de films */
     .film-container {
-        display: flex;
-        margin-top: 20px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        flex-direction: row-reverse;
+        place-content: center flex-start;
+    display: flex;
+    -webkit-box-pack: start;
+    flex-flow: wrap;
+    margin: 0px 0px 0px -21px;
     }
     
     .film-block {
-        max-width: 41vh;
-        height: 23vh;
-        background-color: #eee;
-        margin: 20px 11px 0 11px;
-        border-radius: 5px;
-        min-width: 41vh;
-        display: flex;
+        margin: 20px 0px 0px 20px;
+    flex: 0 0 auto;
+    width: calc(20% - 20px);
+    background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
+    box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+    transform: scale(1, 1) translateZ(0px);
+    transition-duration: 300ms;
+    transition-property: transform, box-shadow;
+    transition-timing-function: ease-out;
+    -webkit-font-smoothing: subpixel-antialiased;
+    border-radius: 4px;
+    height: 9vw;
+    cursor: pointer;
+}
+.hlugew {
+    inset: 0px;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    position: absolute;
+    transition: opacity 500ms ease-in-out 0s;
+    width: 100%;
+    border-radius: 4px;
+}
+@media (max-width: 480px) {
+    .film-block {
+        margin: 20px 0px 0px 20px;
+        flex: 0 0 auto;
+        width: calc(45% - 0px);
+        background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
+        box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+        transform: scale(1, 1) translateZ(0px);
+        transition-duration: 300ms;
+        transition-property: transform, box-shadow;
+        transition-timing-function: ease-out;
+        -webkit-font-smoothing: subpixel-antialiased;
+        border-radius: 4px;
+        height: 23vw;
+        cursor: pointer;
+    }    
+}
+@media (max-width: 420px) {
+    .film-block {
+        margin: 20px 0px 0px 20px;
+        flex: 0 0 auto;
+        width: calc(44% - 0px);
+        background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
+        box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+        transform: scale(1, 1) translateZ(0px);
+        transition-duration: 300ms;
+        transition-property: transform, box-shadow;
+        transition-timing-function: ease-out;
+        -webkit-font-smoothing: subpixel-antialiased;
+        border-radius: 4px;
+        height: 23vw;
+        cursor: pointer;
+    }    
+}
+@media (max-width: 347px) {
+    .film-block {
+        margin: 20px 0px 0px 20px;
+        flex: 0 0 auto;
+        width: calc(41vw - 0px);
+        background: linear-gradient(rgb(48, 50, 62), rgb(30, 31, 42));
+        box-shadow: rgba(0, 0, 0, 0.69) 0px 26px 30px -10px, rgba(0, 0, 0, 0.73) 0px 16px 10px -10px;
+        transform: scale(1, 1) translateZ(0px);
+        transition-duration: 300ms;
+        transition-property: transform, box-shadow;
+        transition-timing-function: ease-out;
+        -webkit-font-smoothing: subpixel-antialiased;
+        border-radius: 4px;
+        height: 23vw;
+        cursor: pointer;
+    }    
+    h1 {
+        color: #ffffff;
+        margin-right: 1.5vw;
+        font-size: 25px;
+        letter-spacing: .11px;
+        line-height: 1.2;
+        font-family: Avenir-World-for-Disney-Demi,sans-serif;
     }
+    .css-1uhsxw6-control {
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgba(182, 182, 182, 0.2);
+        border-radius: 18px;
+        box-shadow: none;
+        cursor: pointer;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        min-height: 0px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+        box-sizing: border-box;
+        color: rgb(249, 249, 249);
+        border: none;
+        padding: 0px 12px 0px 0px;
+        height: 29px;
+        width: 100%;
+        outline: 0px !important;
+    }
+    .css-1aw1mbz-singleValue {
+        color: rgb(249, 249, 249);
+        margin-left: 0px;
+        margin-right: 10px;
+        max-width: none;
+        overflow: hidden;
+        position: relative;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        top: 11px;
+        transform: translateY(-50%);
+        box-sizing: border-box;
+        padding: 0px 0px 0px 16px;
+        font-size: 2vh;
+    }
+    .DropTitle {
+        display: flex;
+        margin-top: 14vh;
+        justify-content: space-around;
+    }
+}
