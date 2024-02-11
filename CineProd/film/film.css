@@ -40,7 +40,8 @@
 }
 
 .film-overlay {
-    background: linear-gradient(to top, #222222 60%, transparent 100%);
+    background: rgb(21,21,21);
+background: linear-gradient(180deg, rgba(21,21,21,0) 0%, rgba(30,22,50,1) 77%);
     color: #fff;
     padding: 20px;
 }
@@ -162,7 +163,8 @@ video {
 #videoContainer {
     display: flex;
     justify-content: center;
-    background: #222;
+    background: rgb(30,22,50);
+background: linear-gradient(223deg, rgba(30,22,50,1) 75%, rgba(86,58,2,1) 100%);
     padding: 26px;
 }
 
