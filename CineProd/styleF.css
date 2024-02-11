@@ -409,7 +409,7 @@ background: linear-gradient(180deg, rgba(21,21,21,1) 0%, rgba(77,77,77,0) 89%);
     display: flex;
     -webkit-box-pack: start;
     flex-flow: wrap;
-    margin: 0px 0px 0px -21px;
+    margin: 0px 0px 35px -21px;
     }
     
     .film-block {
