@@ -155,8 +155,8 @@ background: linear-gradient(180deg, rgba(21,21,21,0) 0%, rgba(30,22,50,1) 77%);
     margin: 0 auto;
 }
 
-video{
-    width: 65%;
+.phone {
+    width: fit-content;
     height: auto;
     outline-style: solid;
     outline-offset: 5px;
@@ -164,9 +164,10 @@ video{
     outline-color: #10c300;
     border-radius: 0.5vw;
     margin-bottom: 2vw;
+    display: none;
 }
-iframe{
-    width: 50%;
+.ordi {
+    width: fit-content;
     outline-style: solid;
     outline-offset: 5px;
     outline-width: 2px;
@@ -175,12 +176,23 @@ iframe{
     margin-bottom: 2vw;
 }
 
+@media screen and (max-width:480px) {
+    .phone {
+        display: block;
+    }
+    .ordi {
+        display: none;
+    }
+}
+
 #videoContainer {
     display: flex;
     justify-content: center;
     background: rgb(30,22,50);
-background: linear-gradient(223deg, rgba(30,22,50,1) 75%, rgba(86,58,2,1) 100%);
+    background: linear-gradient(223deg, rgba(30,22,50,1) 75%, rgba(86,58,2,1) 100%);
     padding: 26px;
+    flex-direction: column-reverse;
+    align-items: center;
 }
 
 #overlay {
