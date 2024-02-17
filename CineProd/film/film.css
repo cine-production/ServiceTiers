@@ -155,9 +155,18 @@ background: linear-gradient(180deg, rgba(21,21,21,0) 0%, rgba(30,22,50,1) 77%);
     margin: 0 auto;
 }
 
-video {
+video{
     width: 65%;
     height: auto;
+    outline-style: solid;
+    outline-offset: 5px;
+    outline-width: 2px;
+    outline-color: #10c300;
+    border-radius: 0.5vw;
+    margin-bottom: 2vw;
+}
+iframe{
+    width: 50%;
     outline-style: solid;
     outline-offset: 5px;
     outline-width: 2px;
