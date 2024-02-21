@@ -25,6 +25,17 @@
             -webkit-text-fill-color: transparent;
             transition: opacity 3s;
         }
+		#content1 {
+            position: absolute;
+            text-align: center;
+            font-size: 2em;
+            opacity: 0;
+            background: -webkit-linear-gradient(#ff0000, #ff0000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: opacity 3s;
+        }
 
         #instructions {
             position: absolute;
@@ -37,6 +48,16 @@
         }
 
         #paragraph {
+            position: absolute;
+            font-size: 1.5em;
+            opacity: 0;
+            background: -webkit-linear-gradient(#ffffff, #ffffff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: opacity 3s;
+        }
+		#paragraph1 {
             position: absolute;
             font-size: 1.5em;
             opacity: 0;
@@ -477,9 +498,11 @@ background-clip: text;
     </style>
 </head>
 <body>
-    <div class="title" id="content">Mon texte</div>
     <div class="title" id="instructions">Cliquez sur l'écran</div>
-    <div class="title" id="paragraph">Votre paragraphe ici</div>
+    <div class="title" id="content">Nova Escape présente</div>
+    <div class="title" id="paragraph">Un tous nouvelle escape game</div>
+    <div class="title" id="paragraph1">Inspié d'animatronics mal veillant</div>
+    <div class="title" id="content1">Five Nights at Freddy</div>
     <div class="title" id="trait">t</div>
     <div class="glitch-demo">
 	<div class="glitch">
@@ -502,6 +525,8 @@ background-clip: text;
             var content = document.getElementById("content");
             var instructions = document.getElementById("instructions");
             var paragraph = document.getElementById("paragraph");
+            var paragraph1 = document.getElementById("paragraph1");
+            var content1 = document.getElementById("content1");
             var audio = document.getElementById("myAudio");
 
             // Fonction pour démarrer la musique et afficher le texte avec l'effet de fondu
@@ -529,7 +554,30 @@ background-clip: text;
                             // Délai de 1 seconde avant d'afficher le paragraphe
                             setTimeout(function() {
                                 paragraph.style.opacity = "1"; // Afficher le paragraphe avec l'effet de fondu
-                            }, 2000);
+
+								setTimeout(function() {
+                                	paragraph.style.opacity = "0"; // Afficher le paragraphe avec l'effet de fondu
+									
+									setTimeout(function() {
+                                		paragraph1.style.opacity = "1"; // Afficher le paragraphe avec l'effet de fondu
+                            		
+										setTimeout(function() {
+                                			paragraph1.style.opacity = "0"; // Afficher le paragraphe avec l'effet de fondu
+                            				
+											setTimeout(function() {
+                                				content1.style.opacity = "1"; // Afficher le paragraphe avec l'effet de fondu
+                            				
+												
+
+											}, 2000);
+
+										}, 2000);
+
+									}, 2000);
+
+								}, 2000);
+                            
+							}, 2000);
 
                         }, 3000);
 
