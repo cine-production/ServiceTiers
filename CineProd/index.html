@@ -89,6 +89,14 @@
        <button class="nxt-btn"><img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/nxt.png" alt=""></button>
        <div class="film-container">
         <!-- 5 blocks centrés et espacés -->
+        <div class="film-block" onclick="window.location.href = 'film/escapegame01.2.html'">
+            <img alt="Escape Game 2" src="https://m.media-amazon.com/images/S/pv-target-images/1a987a11c9d71493fefeddfadeb952a65fe7d065f8c4819654b26befc7370e58._UR1920,1080_SX480_FMwebp_.jpg" class="sc-bwzfXH hlugew">
+            <div class="film-info">
+                <p>Temps: 2h15m</p>
+                <p>Taille: 1080p</p>
+                <!-- Ajoutez d'autres informations ici -->
+            </div>
+        </div>
         <div class="film-block" onclick="window.location.href = 'film/escapegame01.html'">
             <img alt="Escape Game" src="https://m.media-amazon.com/images/S/pv-target-images/f1ef68c6e68a4b2b4c91565791bdf051d1f02f10ab6d793b92638c8d454d8147._UR1920,1080_SX720_FMwebp_.jpg" class="sc-bwzfXH hlugew">
         </div>
@@ -109,36 +117,6 @@
         </div>
         <div class="film-block" onclick="window.location.href = 'film/maisonderetraite1.html'">
             <img alt="Maison de retraite 1" src="https://m.media-amazon.com/images/S/pv-target-images/aa389783db006b37fbf71dd81622584cafa983f6cb956300f39eda15588185d0._UR1920,1080_BR-6_SX480_FMwebp_.png" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="A Noite Das Bruxas" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/363D0C422CCE31A7EA2DBA2D34B784AC7D118ABDB2A80BDFD8C354917EC2FD26/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="O Beco do Pesadelo" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E06F90AF23203B6337388081BF943EB749C6DE8FF10A9ECCC02CC1F0D5624CBF/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Amor, Sublime Amor" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/0B7CE87018FB92420E01F1C8BB19819AA5BBFA28B00B967608B44535D4B31013/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="A Profecia" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/565ED2DEC1EFA52F94A40AB659057CE05B200F30EB4D386681AFD31E48A14FD4/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Acampamento de Teatro" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C590DB2F4CCBB50FE5AA577B1D4F5C733725C39C18990C455B40A67AA18D2832/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="O Dia em que a Terra Parou" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E797F9EB3E22C1F0C6712257EDF01A32EE01087302278EC3AB6ADD69A0942ACC/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Do Inferno" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/628C94760DB8703E2052BCAE8A2624EF81884DB9ECD1AD3B6BB8F6489423F3AA/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Por Um Fio" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A52CFC59D43163333FEAA960F60AC364A74300FCAD59AF3041F5F1859FC272EA/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Morte no Nilo" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9A4D39C2DE296784AAD2BA42F4F94C17678F21D21934589F023BA7FCDF99E9BF/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
-        </div>
-        <div class="film-block">
-            <img alt="Pequenos Grandes Astros" src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C5C52EF3E27DAAEA38133A5796ADEC2E7E4DB469D2E299A3719BAC7EF514A0A9/scale?width=400&amp;aspectRatio=1.78&amp;format=jpeg" class="sc-bwzfXH hlugew">
         </div>
     </div>
     </div>
@@ -165,5 +143,26 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
+    <script>
+        const filmBlocks = document.querySelectorAll('.film-block');
+
+filmBlocks.forEach(block => {
+    let timer;
+
+    block.addEventListener('mouseenter', () => {
+        timer = setTimeout(() => {
+            const filmInfo = block.querySelector('.film-info');
+            filmInfo.style.opacity = '1';
+        }, 700);
+    });
+
+    block.addEventListener('mouseleave', () => {
+        clearTimeout(timer);
+        const filmInfo = block.querySelector('.film-info');
+        filmInfo.style.opacity = '0';
+    });
+});
+
+    </script>
 </body>
 </html>
