@@ -544,7 +544,7 @@ body{
     object-fit: cover;
     opacity: 1;
     position: absolute;
-    transition: opacity 500ms ease-in-out 0s;
+    transition: opacity 150ms ease-in-out 0ms;
     width: 100%;
     border-radius: 4px;
 }
