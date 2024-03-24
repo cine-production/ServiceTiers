@@ -53,7 +53,7 @@ background: linear-gradient(180deg, rgba(21,21,21,0) 0%, rgba(30,22,50,1) 77%);
 
 .film-title {
     margin: 0;
-    max-width: 85%;
+    max-width: 50%;
     font-size: 5vw;
     font-family: 'Amazon Ember', Courier, monospace;
     font-weight: 900;

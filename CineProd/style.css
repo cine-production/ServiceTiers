@@ -170,6 +170,9 @@ body{
     opacity: 0.8;
 }
 
+
+/* VIDEO CARD CONTAINER | PROCHAINEMENT */
+
 .video-card-container {
     position: relative;
     width: 80%;
@@ -180,6 +183,31 @@ body{
     margin-top: 1vw;
     justify-content: space-between;
 }
+
+
+
+.video-card-container {
+    background-color: #ffffff29;
+    Z-INDEX: -1;
+    padding: 1%;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: goldenrod;
+    height: 10vw;
+}
+.video-card {
+    filter: blur(5px) opacity(0.5);
+}
+.textTemp{
+    position: absolute;
+    top: 18.5%;
+    left: 42%;
+    color: gold;
+    font-size: larger;
+    font-weight: bold;
+}
+
+/* ----------------------------------- */
 
 
 
@@ -326,38 +354,6 @@ body{
     margin: 5px 0;
     font-weight: 500;
     font-size: 12px;
-}
-
-.watchlist-btn{
-    position: relative;
-    width: 100%;
-    text-transform: capitalize;
-    background: none;
-    border: none;
-    font-weight: 500;
-    text-align: right;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 5px 0;
-    cursor: pointer;
-    padding: 10px 5px;
-    border-radius: 5px;
-}
-
-.watchlist-btn::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -5px;
-    height: 35px;
-    width: 35px;
-    background-image: url(images/add.png);
-    background-size: cover;
-    transform: scale(0.4);
-}
-
-.watchlist-btn:hover{
-    color: #fff;
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .pre-btn,
@@ -626,9 +622,5 @@ body{
         margin: 3px 0;
         font-size: 8px;
     }
-    .watchlist-btn {
-        margin: 1px 0;
-        padding: 3px 4px;
-        font-size: 5px;
-    }
+    
   }
