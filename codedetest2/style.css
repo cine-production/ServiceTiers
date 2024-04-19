@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+#attractions div {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#attractions h2 {
+    margin: 0 0 10px 0;
+    color: #007BFF;
+}
+
+#attractions p {
+    margin: 5px 0;
+}
+
+#erreur {
+    padding: 20px;
+    background-color: #ffc0cb; /* Couleur de fond rose clair */
+    color: #333; /* Couleur de texte */
+    border-radius: 5px; /* Bords arrondis */
+    margin-top: 20px;
+}
+.contentHead {
+    display: flex;
+    justify-content: center;
+}
+.HoraireOuverture {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 25vh;
+    width: 90%;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 6px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-image: url(/DesignSansTitre.png);
+    border-image-width: 5%;
+    border-image-repeat:space;
+}
+.text1 {
+    color: #001f41;
+    font-weight: 600;
+}
+.text2 {
+    color: #001f41;
+    max-width: 49%;
+    font-size: 60%;
+}
+.text3 {
+    color: #001f41;
+    font-size: small;
+    color: rgb(150, 107, 0);
+}
+
+section {
+    position: relative;
+    display: flex;
+    color: rgb(150, 107, 0);
+    font-weight: 600;
+}
+.logo {
+    width: 45%;
+    margin-top: 5%;
+}
