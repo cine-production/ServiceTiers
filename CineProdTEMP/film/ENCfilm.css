@@ -1,0 +1,206 @@
+ /* Styles pour la page de film */
+ @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+
+ body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Empêche les barres de défilement */
+    background-color: #000; /* Fond noir pour la vidéo */
+}
+
+#film-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    z-index: -2;
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+#film-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajoutez d'autres styles pour la bannière ici */
+}
+
+#film-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /*transition: 6s ease-in-out;*/
+    opacity: 1;
+}
+
+.film-overlay {
+    background: linear-gradient(to top, #222222 60%, transparent 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+.film-title {
+    margin: 0;
+    max-width: 85%;
+}
+
+.film-buttons {
+    margin-top: 10px;
+}
+
+.play-button, .download-button {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out;
+}
+
+.download-button {
+    background-color: #000000;
+    padding: 7px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: 2px;
+}
+
+.download-button img {
+    margin-right: 0px;
+}
+
+.play-button img {
+    margin-right: 8px;
+}
+
+/* Centrer les images à gauche dans les boutons */
+.film-buttons button img {
+    display: inline-block;
+    vertical-align: sub;
+     /* Espacement entre l'image et le texte */
+    width: 16px; /* Largeur souhaitée */
+    height: 16px; /* Hauteur souhaitée */
+}
+
+/* Styliser l'icône d'horloge à côté de la durée */
+.film-duration img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; /* Espacement entre l'image et la durée */
+    width: 11px; /* Largeur souhaitée */
+    height: 11px; /* Hauteur souhaitée */
+}
+
+
+.play-button:hover {
+    background-color: #eee;
+    transform: scale(1.1);
+}
+
+.download-button:hover {
+    background-color: #222222;
+}
+
+.film-description {
+    font-size: initial;
+    margin-top: 20px;
+    max-width: 90%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 800;
+}
+
+.film-duration {
+    font-size: 13px;
+    margin-top: 12px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 200;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    transition: 1.2s ease-in-out;
+    opacity: 0;
+}
+
+.back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffff;
+    margin: 10px;
+    rotate: 180deg;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+#videoContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 2;
+}
+
+#videoIframe {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#overlay.active {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+@media screen and (max-width:480px) {
+    #film-banner {
+        height: 78vh;
+    }
+    .film-title {
+        max-width: 45%;
+    }
+}

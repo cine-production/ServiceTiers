@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
+    <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
+    <title>Connexion à ton compte - CineProd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1b1b;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: -webkit-fill-available;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #66afe9;
+        }
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+            text-decoration: none;
+        }
+        .hyperlien {
+    display: flex;
+    justify-content: center;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="login-form">
+            <h1>Connexion</h1>
+            <input type="email" id="login-email" name="login-email" placeholder="Email">
+            <input type="password" id="login-password" name="login-password" placeholder="Mot de passe">
+            <button type="submit">Se connecter</button>
+            <div class="hyperlien">
+                <a href="resetmdp.html" id="forgot-password-link">MDP oublié</a>
+                <a style="margin: auto 3px 1px 3px;">|</a>
+                <a href="inscription.html" id="forgot-password-link">Inscription</a>
+            </div>
+                <!-- <a href="resetmdp.html" id="forgot-password-link">inscription</a> -->
+        </form>
+    </div>
+    <script type="module" src="authcon.js"></script>
+</body>
+</html>
