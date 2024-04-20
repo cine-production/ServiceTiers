@@ -10,32 +10,70 @@
     <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
     <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
-<body>
+<body style="height: 100vh;">
     
-<nav class="navbar">
-    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" class="brand-logo" alt="">
-    <ul class="nav-links">
-        <li class="nav-items">
-            <a href="#">
-                <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/home.png" alt=""> HOME
-            </a>
-        </li>
-        <li class="nav-items">
-            <a href="/search.html">
-                <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/search.png" alt=""> SEARCH
-            </a>
-        </li>
-        <!--<li class="nav-items">
+    <nav class="navbar">
+        <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" class="brand-logo"
+            alt="">
+        <ul class="nav-links">
+            <li class="nav-items">
+                <a href="index.html">
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/home.png" alt=""> 
+                    HOME
+                </a>
+            </li>
+            <li class="nav-items">
+                <a href="how.html">
+                    <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/2754.png" alt="">
+                    COMMENT REGARDER
+                </a>
+            </li>
+            <li class="nav-items">
+                <a href="search.html">
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/search.png" alt="">
+                    SEARCH
+                </a>
+            </li>
+            <li class="nav-items">
+                <a href="films.html">
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/films.png" alt="">
+                    FILMS
+                </a>
+            </li>
+            <!--<li class="nav-items">
             <a href="#">
                 <img src="images/plus.png" alt=""> 
             </a>
         </li>-->
-    </ul>
-    <div class="right-container" id="auth-container">
-        
+        </ul>
+        <div class="right-container" id="auth-container">
+
+        </div>
+    </nav>
+
+
+    <div class="all-block">
+        <input id="searchInput" type="text" placeholder="Rechercher par titre, genre, personnage..." oninput="search()">
     </div>
-</nav>
+
+    <script>
+        function search() {
+          var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+          if (searchText === "secret du ph") {
+            window.location.href = "secret/index.html";
+            document.getElementById("searchInput").value = "";
+          }
+          else if (searchText === "google") {
+            window.location.href = "https://google.com";
+            document.getElementById("searchInput").value = "";
+          }
+        }
+        </script>
+
 
 </body>
 </html>
