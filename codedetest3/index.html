@@ -30,13 +30,23 @@
 
 
         <div class="background-video">
-            <video autoplay muted loop preload="auto" controls="none">
-                <source src="https://www.europapark.de/sites/default/files/media_video/2024-03/Head%20Slide%20Gateway%20Sommer%20Saison%202024.mp4" type="video/mp4">
+            <video id="background-video" autoplay loop muted src="https://www.europapark.de/sites/default/files/media_video/2024-03/Head%20Slide%20Gateway%20Sommer%20Saison%202024.mp4">
             </video>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var video = document.getElementById('background-video');
+                    // Jouer la vidéo dès que le DOM est entièrement chargé
+                    video.play().catch(function(error) {
+                        console.error("Erreur lors de la lecture automatique de la vidéo : ", error);
+                    });
+                });
+            </script>
             <div class="content">
                 <img class="img_video" src="img/join_video.png" alt="Image d'arrière-plan">
             </div>
         </div>
+        
+        
 
         <div class="content-page">
             <div class="mascot">

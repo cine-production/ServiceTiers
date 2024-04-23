@@ -126,10 +126,6 @@ header.scrolled #Ebene_1header {
     z-index: -1;
 }
 
-.background-video video::-webkit-media-controls-enclosure {
-    display: none !important; /* Cache les contrôles de la vidéo */
-}
-
 .content {
     margin-top: 70vw;
     position: relative;
