@@ -26,21 +26,128 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px 0;
+    padding: 3px 0;
 }
 
 .menu-item {
     text-decoration: none;
     color: rgb(59, 59, 59);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: x-small;
+    color: #a59051;
+    font-family: sans-serif;
+    padding: 0px 10px;
 }
 .menu-item svg {
-    height: 28px;
+    height: 40px;
 }
-path {
+/* path {
     fill: #a59051;
+} */
+
+.menu-item_act {
+    background-color: #e7e7e7;
 }
 
-.menu-item:hover {
-    background-color: #e7e7e7;
+
+header {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+    align-items: center;
+}
+
+#Ebene_1header {
+    stroke-width: 1.5px;
+    fill:none;
+    stroke:#f1f1f1;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+}
+
+header svg {
+    height: 30px;
+}
+
+header.scrolled {
+    background-color: #fff; /* Couleur de fond blanche après le défilement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header.scrolled #Ebene_1 {
+    stroke-width: 1.5px;
+    fill:none;
+    stroke:black;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+}
+
+.pageTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: sans-serif;
+}
+
+.scrolled .pageTitle {
+    opacity: 1;
+}
+
+
+.background-video {
+    position: relative;
+    width: 100%;
+    height: 102vw; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+}
+
+.background-video video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 102vw;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.background-video video::-webkit-media-controls-enclosure {
+    display: none !important; /* Cache les contrôles de la vidéo */
+}
+
+.content {
+    margin-top: 70vw;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+}
+
+.img_video {
+    width: 100%;
+}
+
+.content-page {
+    background-color: #f1f1f1;
+}
+
+.content-page .div1 {
+    background-color: brown;
+    border-radius: 5px;
+    height: 800px;
+    margin: 20px;
 }
