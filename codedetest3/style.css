@@ -116,7 +116,7 @@ header.scrolled #Ebene_1header {
     overflow: hidden;
 }
 
-.background-video video {
+.background-video #background-video {
     position: fixed;
     top: 0;
     left: 0;
@@ -141,7 +141,8 @@ header.scrolled #Ebene_1header {
     background-color: #f1f1f1;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .content-page .welcome {
@@ -150,8 +151,8 @@ header.scrolled #Ebene_1header {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 5px;
-    height: 23vw;
-    width: 58%;
+    height: 28vw;
+    width: 70%;
     font-size: larger;
     display: flex;
     align-items: center;
@@ -160,16 +161,17 @@ header.scrolled #Ebene_1header {
     align-content: center;
     box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    flex-direction: column;
 }
 
-.content-page .welcome h4 {
+.content-page .welcome h2 {
     font-weight: bold;
     margin: 0;
 }
 .content-page .welcome p {
     margin: 0;
     font-weight: 500;
-    font-size: small;
+    font-size:medium;
     color: #a59051;
 }
 .content-page .mascot {
@@ -179,8 +181,31 @@ header.scrolled #Ebene_1header {
     z-index: 1;
     width: 58%;
     position: absolute;
-    margin-top: -14vw;
+    margin-top: -40vw;
 }
 .content-page .mascot img {
-    width: 26%;
+    width: 35%;
+}
+
+.separe1 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 35px 0px;
+}
+
+.line {
+    width: 33%;
+    opacity: 0.4;
+}
+.separe1 .svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.separe1 svg {
+    position: absolute;
+    opacity: 0.2;
 }
