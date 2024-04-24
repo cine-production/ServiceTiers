@@ -219,11 +219,11 @@ header.scrolled #Ebene_1header {
 .block-actu .block {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
     border-radius: 8px;
     margin: 16px;
-    height: 32vw;
+    height: 31vw;
     box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
 }
 .block-actu .block .img {
@@ -236,7 +236,7 @@ header.scrolled #Ebene_1header {
 }
 .block-actu .block .description {
     font-size: small;
-    height: 35%;
+    height: 50%;
     margin-left: 5%;
     color: #000;
     font-family: sans-serif;
