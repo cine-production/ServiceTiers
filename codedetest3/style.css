@@ -22,7 +22,7 @@ body {
     align-items: center;
     background-color: #ffffff;
     color: rgba(136, 136, 136, 0.26);
-    position: fixed;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -140,9 +140,8 @@ header.scrolled #Ebene_1header {
 .content-page {
     background-color: #f1f1f1;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
 }
 
 .content-page .welcome {
@@ -160,7 +159,7 @@ header.scrolled #Ebene_1header {
     justify-content: center;
     align-content: center;
     box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    z-index: 3;
     flex-direction: column;
 }
 
@@ -181,7 +180,7 @@ header.scrolled #Ebene_1header {
     z-index: 1;
     width: 58%;
     position: absolute;
-    margin-top: -40vw;
+    margin-top: -18vw;
 }
 .content-page .mascot img {
     width: 35%;
@@ -208,4 +207,37 @@ header.scrolled #Ebene_1header {
 .separe1 svg {
     position: absolute;
     opacity: 0.2;
+}
+
+.block-actu {
+    height: 20vh;
+    width: 100%;
+    margin: 0px 0 8vw;
+    display: flex;
+}
+
+.block-actu .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    margin: 16px;
+    height: 32vw;
+    box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
+}
+.block-actu .block .img {
+    width: 15vh;
+    height: 50%;
+}
+.block-actu .block .img img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+.block-actu .block .description {
+    font-size: small;
+    height: 35%;
+    margin-left: 5%;
+    color: #000;
+    font-family: sans-serif;
 }
