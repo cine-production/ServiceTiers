@@ -210,35 +210,130 @@ header.scrolled #Ebene_1header {
 }
 
 .block-actu {
-    height: 20vh;
     width: 100%;
     margin: 0px 0 8vw;
     display: flex;
+    overflow-x: auto; /* Ajout du défilement horizontal */
+}
+.block-actu::-webkit-scrollbar {
+    display: none; /* Cacher la barre de défilement pour les navigateurs WebKit */
 }
 
-.block-actu .block {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* block 1 */
+.block-actu .block1 {
     background-color: white;
-    border-radius: 8px;
-    margin: 16px;
-    height: 39vw;
+    border-radius: 10px;
+    margin: 16px 4.5px auto 20px;
     box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
-    width: 17vh;
+    width: 42vw;
+    height: 39vw;
+    min-width: 42vw;
+}
+.block-actu .block1 .img {
+    width: 100%;
+    height: auto;
+}
+.block-actu .block1 .img img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    max-height: 23vw;
+}
+.block-actu .block1 .description p {
+    margin: 0;
+    -webkit-line-clamp: 2;
+}
+.block-actu .block1 .description {
+    font-size: small;
+    color: #000;
+    font-family: sans-serif;
+    height: auto;
+    font-weight: bolder;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    margin: 2vw;
+    margin-top: 1vw;
+}
+/* ------- */
+
+/* block normal */
+.block-actu .block {
+    background-color: white;
+    border-radius: 10px;
+    margin: 16px 4.5px;
+    box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
+    width: 42vw;
+    height: 39vw;
+    min-width: 42vw;
 }
 .block-actu .block .img {
     width: 100%;
-    height: 50%;
+    height: auto;
 }
 .block-actu .block .img img {
     width: 100%;
-    border-radius: 8px 8px 0 0;
+    border-radius: 10px 10px 0 0;
+    max-height: 23vw;
+}
+.block-actu .block .description p {
+    margin: 0;
+    -webkit-line-clamp: 2;
 }
 .block-actu .block .description {
     font-size: small;
-    height: 50%;
-    margin-left: 5%;
     color: #000;
     font-family: sans-serif;
+    height: auto;
+    font-weight: bolder;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    margin: 2vw;
+    margin-top: 1vw;
+}
+/* ------- */
+
+/* block 2 */
+.block-actu .block2 {
+    background-color: white;
+    border-radius: 10px;
+    margin: 16px 20px auto 4.5px;
+    box-shadow: 0px 5px 7px -2px rgba(0, 0, 0, 0.2);
+    width: 42vw;
+    height: 39vw;
+    min-width: 42vw;
+}
+.block-actu .block2 .img {
+    width: 100%;
+    height: auto;
+}
+.block-actu .block2 .img img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    max-height: 23vw;
+}
+.block-actu .block2 .description p {
+    margin: 0;
+    -webkit-line-clamp: 2;
+}
+.block-actu .block2 .description {
+    font-size: small;
+    color: #000;
+    font-family: sans-serif;
+    height: auto;
+    font-weight: bolder;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    margin: 2vw;
+    margin-top: 1vw;
+}
+/* ------- */
+
+
+.angle-bracket {
+    font-size: 8px;
 }
