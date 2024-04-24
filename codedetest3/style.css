@@ -211,7 +211,7 @@ header.scrolled #Ebene_1header {
 
 .block-actu {
     width: 100%;
-    margin: 0px 0 8vw;
+    margin: 0px 15px 8vw 15px;
     display: flex;
     overflow-x: auto; /* Ajout du défilement horizontal */
 }
