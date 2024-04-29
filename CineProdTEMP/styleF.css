@@ -649,3 +649,16 @@ body{
         justify-content: space-around;
     }
 }
+
+.custom-cursor {
+    cursor: url('https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png'), auto;
+}
+
+#customCursor {
+    position: absolute;
+    width: 50px; /* Ajustez la taille de votre image */
+    height: 50px; /* Ajustez la taille de votre image */
+    pointer-events: none; /* Pour que l'image ne gêne pas les interactions de la souris */
+    z-index: 9999; /* Assurez-vous que l'image apparaît au-dessus de tous les autres éléments */
+    display: none; /* Par défaut, l'image est cachée */
+}

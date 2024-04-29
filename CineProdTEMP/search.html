@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,26 @@
     <script type="module" src="userstate.js"></script>
     <link rel="stylesheet" href="styleF.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
-    <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
+    <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png"
+        type="image/x-icon">
+    <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png"
+        type="image/x-icon">
+    <link rel="apple-touch-icon"
+        href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
 <body style="height: 100vh;">
-    
+
     <nav class="navbar">
         <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" class="brand-logo"
             alt="">
         <ul class="nav-links">
             <li class="nav-items">
                 <a href="index.html">
-                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/home.png" alt=""> 
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/home.png" alt="">
                     HOME
                 </a>
             </li>
@@ -61,32 +66,53 @@
         <input id="searchInput" type="text" placeholder="Rechercher par titre, genre, personnage..." oninput="search()">
     </div>
 
+    <audio id="treasureSound"
+        src="https://audiocdn.epidemicsound.com/ES_ITUNES/Monster%20Giant%20Footstep/ES_Monster%20Giant%20Footstep.mp3"></audio>
     <script>
         function search() {
-          var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
-          if (searchText === "chibrax") {
-            window.location.href = "secret/index.html";
-            document.getElementById("searchInput").value = "";
-          }
-          else if (searchText === "google") {
-            window.location.href = "https://google.com";
-            document.getElementById("searchInput").value = "";
-          }
-          else if (searchText === "medic") {
-            window.location.href = "https://youtube.com/channel/UC-IHU0ZTfoHESAk7ebyYtqA";
-            document.getElementById("searchInput").value = "";
-          }
-          else if (searchText === "e621") {
-            window.location.href = "https://e621.net/post?tags=&page=";
-            document.getElementById("searchInput").value = "";
-          }
-          else if (searchText === "riii") {
-            window.location.href === "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-            document.getElementById("searchInput").value = "";
-          }
+            var searchText = document.getElementById("searchInput").value.trim().toLowerCase();
+            if (searchText === "chibrax") {
+                window.location.href = "secret/index.html";
+                document.getElementById("searchInput").value = "";
+            }
+            else if (searchText === "google") {
+                window.location.href = "https://google.com";
+                document.getElementById("searchInput").value = "";
+            }
+            else if (searchText === "medic") {
+                window.location.href = "https://youtube.com/channel/UC-IHU0ZTfoHESAk7ebyYtqA";
+                document.getElementById("searchInput").value = "";
+            }
+            else if (searchText === "e621") {
+                window.location.href = "https://e621.net/post?tags=&page=";
+                document.getElementById("searchInput").value = "";
+            }
+            else if (searchText === "riii") {
+                window.location.href = "https://youtu.be/xvFZjo5PgG0?feature=shared";
+                document.getElementById("searchInput").value = "";
+            }
+            else if (searchText === "cineproduction") {
+                showCustomCursor();
+            }
         }
-        </script>
+
+        function showCustomCursor() {
+            var customCursor = document.getElementById("customCursor");
+            customCursor.style.display = "block"; // Affiche l'image du curseur
+
+            // Suivre la position du curseur de la souris
+            document.addEventListener("mousemove", function (event) {
+                customCursor.style.left = (event.clientX - (customCursor.offsetWidth / 2)) + "px";
+                customCursor.style.top = (event.clientY - (customCursor.offsetHeight / 2)) + "px";
+            });
+
+            setTimeout(function () {
+                customCursor.style.display = "none"; // Cache l'image du curseur après 10 secondes
+            }, 10000); // 10000 millisecondes = 10 secondes
+        }
+    </script>
 
 
 </body>
+
 </html>
