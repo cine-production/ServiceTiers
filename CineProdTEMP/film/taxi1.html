@@ -6,6 +6,8 @@
     <title>Taxi 1 | CineProd</title>
     <link rel="stylesheet" href="film.css">
     <link rel="stylesheet" href="styleframe.css">
+    <link rel="stylesheet" href="player.css">
+    <script src="player.js"></script>
     <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
     <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
@@ -45,14 +47,15 @@
     </div>
 
 
-    <div id="videoContainer">
-        <div class="ordi">
-            <iframe width="600" height="480" src="https://up.juicypink.link/api/public/dl/odywFebo?inline=true" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+    <div class="info">
+        To see this effect, you should surf with Google Chrome and enable <strong>Experimental Canvas Features</strong> in <a href="chrome://flags" target="_blank">chrome://flags/</a>.
+      </div>
+      <div class="wrapper">
+        <div class="player">
+          <video id="video" src="https://up.juicypink.link/api/public/dl/odywFebo?inline=true" controls></video>
+          <canvas id="myCanvas" width="40%" height="337"></canvas>
         </div>
-        <div class="phone">
-            <video id="video_player_html5_api" class="vjs-tech" poster="https://img.doodcdn.co/snaps/8owvqplwy9oozyas.jpg" tabindex="-1" role="application" preload="metadata" src="https://g308im.video-delivery.net/u5kj7prdqhdhu66de7tayiaziqz3ehsfao4bzinhmqi6mcqhvpcqwqlsaqca/jks7ozdmlb~qlIl4pnYE2?token=u6ijfzkhw4ntmi0l3135g7oh&amp;expiry=1708196090047"> </video>
-        </div>
-    </div>
+      </div>
     
 
     <a href="../index.html" class="back-button">▶</a>

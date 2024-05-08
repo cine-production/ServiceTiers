@@ -1,103 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swiper avec points et flèches</title>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<style>
-    body {
-        background-color: #4b4b4b;
-    }
-  .swiper-container {
-    width: 100%;
-    height: 300px;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var timerID;
+window.onload = function() {
+  canvas = document.getElementById('myCanvas');
+  ctx = canvas.getContext('2d');
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #ffffff;
-  }
+  var video = document.getElementById('video');
 
-  .swiper-pagination {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-  }
+  video.addEventListener('play', function() {
+    video.currentTime = 0;
+    timerID = window.setInterval(function() {
+      ctx.drawImage(video, 0, 0, 600, 460)
+    }, 30);
+  });
 
-  .swiper-pagination .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-    display: inline-block;
-    border-radius: 50%;
-    background: #777;
-    margin: 0 5px;
-    cursor: pointer;
-  }
+  video.addEventListener('pause', function() {
+    stopTimer();
+  });
 
-  .swiper-pagination .swiper-pagination-bullet-active {
-    background: #333;
-  }
+  video.addEventListener('ended', function() {
+    stopTimer();
+  });
+}
+    </script>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    height: auto;
-    margin-top: -20px;
-    z-index: 10;
-    cursor: pointer;
-    background-color: transparent;
-    color: #fff;
-    border: none;
-    outline: none;
-    font-size: 30px;
-  }
+html,
+body {
+  height: 100%;
+}
 
-  .swiper-button-prev {
-    left: 10px;
-  }
+body {
+  background: #222;
+  overflow: hidden;
+}
 
-  .swiper-button-next {
-    right: 10px;
-  }
-</style>
+.info {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+.info a,
+.info strong {
+  font-weight: bold;
+  color: aqua;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 600px;
+  margin: 60px auto;
+}
+
+.player {
+  width: 600px;
+  height: 337px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.player video {
+  width: 600px;
+  height: 337px;
+  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 10px solid #000;
+  box-shadow: 0 0 10px #000;
+}
+
+.player canvas {
+  position: absolute;
+  width: 600px;
+  height: 337px;
+  transform: scale(1.2);
+  -webkit-filter: blur(50px);
+  opacity: 0.75;
+  z-index: -1;
+}
+
+    </style>
 </head>
 <body>
-
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="" alt="">
-
-    </div>
-    <div class="swiper-slide">Slide 2</div>
-    <div class="swiper-slide">Slide 3</div>
-  </div>
-
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
-
-  <!-- Add Arrows -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-</div>
-
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper('.swiper-container', {
-    pagination: {
-      el: '.swiper-pagination',
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
-</script>
-
+    <div class="info">
+        To see this effect, you should surf with Google Chrome and enable <strong>Experimental Canvas Features</strong> in <a href="chrome://flags" target="_blank">chrome://flags/</a>.
+      </div>
+      <div class="wrapper">
+        <div class="player">
+          <video id="video" src="https://up.juicypink.link/api/public/dl/odywFebo?inline=true" controls></video>
+          
+          <!-- Available video files:
+          sports.mp4
+          video.mp4
+          gopro.mp4
+          -->
+        
+          <canvas id="myCanvas" width="600" height="337"></canvas>
+        </div>
+      </div>
 </body>
 </html>
