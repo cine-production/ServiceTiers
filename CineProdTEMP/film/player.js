@@ -6,7 +6,6 @@ window.onload = function() {
   var video = document.getElementById('video');
 
   video.addEventListener('play', function() {
-    video.currentTime = 0;
     timerID = window.setInterval(function() {
       ctx.drawImage(video, 0, 0, 600, 460)
     }, 30);
