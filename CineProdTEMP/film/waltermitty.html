@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La vie rêvée de Walter Mitty | CineProd</title>
+    <link rel="stylesheet" href="film.css">
+    <link rel="stylesheet" href="styleframe.css">
+    <link rel="stylesheet" href="player.css">
+    <script src="player.js"></script>
+    <link rel="shortcut icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
+    <link rel="icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/logo_night.png">
+</head>
+<body>
+    <div id="film-banner">
+        <!-- Bannière du film -->
+        <img src="https://m.media-amazon.com/images/S/pv-target-images/0527ce23d0268489f1981fa6bc02dcf596d5a0c47a6bd81ba82a4c5784eca332._SX1920_FMwebp_.jpg" alt="La vie rêvée de Walter Mitty">
+    </div>
+
+    <div id="film-content">
+        <!-- Fond bleu avec le titre et les boutons -->
+        <div class="film-overlay">
+            <!-- <img class="film-title" src="" alt=""></img> -->
+            <h1 class="film-title">La vie rêvée de Walter Mitty</h1>
+            <!-- <img class="film-title" src="" alt=""></img> -->
+            <div class="film-buttons">              
+                <!-- <button class="play-button" id="lectureBouton">
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/play2.png" alt="Symbole de lecture">
+                    LECTURE
+                </button> -->
+                <button class="download-button" href="https://1fichier.com/?d51wn8w9nmxsaa56fag6">
+                    <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/download2.png" alt="Symbole de téléchargement">
+                </button>
+            </div>
+            
+            
+            <p class="film-duration">
+                
+                <img src="https://cine-production.github.io/ServiceTiers/BASEDONNEE/CP/images/time.png" alt="Icône d'horloge">: 1h 29min - 1998
+                <!-- Ajoutez ici l'icône pour la durée -->
+            </p>
+            
+            
+            <p class="film-description">
+                Walter Mitty est un homme ordinaire, enfermé dans son quotidien, qui n’ose s’évader qu’à travers des rêves à la fois drôles et extravagants. Mais confronté à une difficulté dans sa vie professionnelle, il doit trouver le courage de passer à l'action dans le monde réel. Il embarque alors dans un périple incroyable, pour vivre une aventure bien plus riche que tout ce qu'il aurait pu imaginer.
+            </p>
+        </div>
+    </div>
+
+    <div id="videoContainer">
+        <div class="ordi">
+            <iframe width="600" height="480" src="https://d0000d.com/d/n07dvxp20qy7" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+        </div>
+        <div class="phone">
+            Indisponible sur téléphone
+        </div>
+    </div>
+    
+
+    <a href="../index.html" class="back-button">▶</a>
+
+
+    <!-- <script>
+        document.getElementById("lectureBouton").addEventListener("click", function() {
+    const videoContainer = document.getElementById("videoContainer");
+    const overlay = document.getElementById("overlay");
+
+    // Affiche l'overlay en effectuant un fondu au noir.
+    overlay.style.display = "block";
+
+    // Utilisez setTimeout pour ajouter l'effet de fondu au noir.
+    setTimeout(function() {
+        overlay.classList.add("active");
+        // Une pause pour que l'overlay ait le temps de devenir noir.
+        setTimeout(function() {
+            // Montre le conteneur vidéo.
+            videoContainer.style.display = "block";
+            // Sortir du mode plein écran (F11) s'il est activé.
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+                overlay.style.display = "none";
+                videoContainer.style.display = "none";
+            }
+            // Mettre en plein écran la vidéo.
+            videoContainer.requestFullscreen = videoContainer.requestFullscreen || videoContainer.mozRequestFullScreen || videoContainer.webkitRequestFullscreen || videoContainer.msRequestFullscreen;
+            videoContainer.requestFullscreen();
+            videoContainer.requestFullscreen();
+        }, 1000); // Attendez 1 seconde (ajustez au besoin).
+    }, 100); // Attendez 0,1 seconde (ajustez au besoin).
+
+    // Lorsque le mode plein écran est quitté, cachez la vidéo et l'overlay à nouveau.
+    document.addEventListener('fullscreenchange', function() {
+        if (!document.fullscreenElement) {
+            videoContainer.style.display = "none";
+            overlay.style.display = "none";
+            overlay.classList.add("");
+        }
+    });
+});
+    </script> -->
+    <!-- Lecture vidéo en arrière-plan -->
+    <!--<iframe width="560" id="background-video" height="315" src="https://www.youtube.com/embed/LwsYfpOcIEI?si=Sjx4b3_rk1J4d4mF&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        Votre navigateur ne prend pas en charge la vidéo HTML5.
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var banner = document.getElementById("film-banner");
+                banner.style.opacity = "0"; // Affiche la vidéo
+            }, 3000); // 3000 millisecondes (3 secondes)
+            setTimeout(function () {
+                var video = document.getElementById("background-video");
+                video.style.zIndex = "-2";
+                video.style.opacity = "1"; // Affiche la vidéo
+            }, 5000); // 3000 millisecondes (3 secondes)
+            //setTimeout(function () {
+            //    var content = document.getElementById("film-content");
+            //    content.style.opacity = "0"; // Affiche la vidéo
+            //}, 10000); // 3000 millisecondes (3 secondes)
+        });
+
+    </script>-->
+</body>
+</html>
