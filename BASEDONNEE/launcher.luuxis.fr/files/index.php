@@ -1,7 +1,7 @@
 {
     "Fabric-1.20": {
         "name": "Fabric-1.20",
-        "url": "http://launcher.luuxis.fr/files?instance=McW3",
+        "url": "https://cine-production.github.io/ServiceTiers/BASEDONNEE/launcher.luuxis.fr/files?instance=McW3",
         "loadder": {
             "minecraft_version": "1.16.5",
             "loadder_type": "Forge",
