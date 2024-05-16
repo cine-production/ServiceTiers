@@ -94,5 +94,8 @@ body, html {
 }
 
 .content {
+    position: absolute;
+    width: 100vh;
+    overflow: hidden;
     
 }
