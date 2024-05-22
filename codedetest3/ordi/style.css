@@ -136,6 +136,63 @@ body, html {
 
 .content svg {
     position: absolute;
-    fill: grey;
+    fill: #b1b1b166;
     display: flex;
+    top: -5rem;
+    left: -3rem;
+    width: 25rem;
+    height: auto;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 100%;
+}
+
+.page-content h2 {
+    font-family: 'Poppins';
+    margin: 0;
+    padding-top: 1rem;
+    color: aliceblue;
+}
+
+.page-content {
+    height: 25rem;
+    background: linear-gradient(180deg, #1a2c56 10%, rgba(255, 255, 255, 0) 100%);
+    max-height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-content .slider .slider-block {
+    width: 12rem;
+    background-color: brown;
+    margin: 20px;
+    height: 35%;
+}
+
+.content-title {
+    display: flex;
+    color: aliceblue;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content-title hr {
+    width: 90%;
+    color: yellow;
+    height: 1px;
+    text-align: center;
+    border: none;
+    background: aliceblue;
+}
+.content-title hr::after {
+    content: 'ervzsrvrv';
 }
