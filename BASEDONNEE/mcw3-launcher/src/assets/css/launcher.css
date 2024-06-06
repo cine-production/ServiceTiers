@@ -1,0 +1,209 @@
+@import 'font.css';
+@import 'theme.css';
+@import 'panels/login.css';
+@import 'panels/home.css';
+@import 'panels/settings.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    color: var(--color);
+    font-family: 'Conduit-ITC';
+    background-color: #7B7952;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+* {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.content-scroll {
+    overflow: auto;
+}
+
+.content-scroll::-webkit-scrollbar {
+    width: 0;
+}
+
+.dragbar {
+    position: fixed;
+    /* background: #00000080; */
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 26px;
+    -webkit-app-region: drag;
+    z-index: 11;
+    display: none;
+    background: linear-gradient(180deg, #00cfb266, #00000000), linear-gradient(to right, rgb(0, 0, 0) 0.6px, transparent 0.6px), linear-gradient(to bottom, rgb(0 0 0 / 40%) 0.6px, transparent 0.6px);
+}
+
+.frame {
+    background: transparent;
+    position: fixed;
+    display: table;
+    top: 0px;
+    right: 0px;
+    z-index: 11;
+    -webkit-app-region: no-drag;
+    display: none;
+}
+
+.hide {
+    display: block;
+}
+
+.button-frame {
+    position: relative;
+    display: table-cell;
+    width: 30px;
+    height: 26px;
+    transition: color .2s, background-color .2s;
+    color: black;
+    cursor: pointer;
+}
+
+.button-frame:before {
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: #f8f9f9;
+}
+
+.icon-close:hover {
+    background: url(../images/cyz02b4f.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.icon-minimize:hover,
+.icon-restore-down:hover,
+.icon-maximize:hover {
+    background-color: #0000009d;
+}
+
+.popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-tab {
+    width: 26rem;
+    background: var(--background);
+    z-index: 10;
+    border-style: none;
+    min-height: 9rem;
+}
+
+.popup-title {
+    font-size: 1.3rem;
+    background: url(../images/pointille.png);
+    background-size: 55px;
+    margin: 0px 0px 0px 0px;
+    padding: 0rem 0rem 0rem 0.5rem;
+    font-weight: 400;
+    background-color: #0a0a0a9e;
+}
+
+.popup-options {
+    display: none;
+    align-items: end;
+    flex-direction: column;
+}
+
+.popup-button {
+    background: url(../images/background-btn1.png) #ffffff00;
+    color: var(--color);
+    font-size: larger;
+    width: 100%;
+    background-size: contain;
+    height: 2.5rem;
+    background-repeat: no-repeat;
+    border-style: none;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px -9px #7B7952;
+    font-family: 'Conduit-ITC';
+    letter-spacing: 1px;
+}
+
+.content-all {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    border-color: #80808052;
+    border-width: thin;
+    border-style: solid;
+    padding: 8px 7px 7px;
+    background: var(--background);
+}
+
+.panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.active {
+    opacity: 1;
+    z-index: 1;
+    pointer-events: all;
+}
+
+.loadscreen {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+#logo {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+    transition: opacity 1s ease-out;
+    animation: scale 6s ease-in-out;
+    scale: 1.6;
+    width: 50%;
+}
+
+@keyframes scale {
+    0% {
+        scale: 1.6;
+    }
+    18% {
+        scale: 0.5;
+    }
+    100% {
+        scale: 0.4;
+    }
+}
