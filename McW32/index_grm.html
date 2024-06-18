@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header avec Logos et Sélecteur de Langue</title>
+    <title>McW3 Call of Duty in Minecraft</title>
+    <link rel="shortcut icon" href="icon.png" type="image/png">
     <style>
         @font-face {
             font-family: 'solano';
@@ -141,12 +142,23 @@
         <h1>BIS ZUM ENDE KÄMPFEN</h1>
         <p>Entdecken Sie Modern Warfare 3 in Minecraft in einem neuen Licht!</p>
         <div class="button">
-            <button>herunterladen</button>
+            <button id="downloadButton">herunterladen</button>
             <div>
-                <p>2.0.63</p>
+                <p>2.0.61</p>
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const fileUrl = "cine-production.github.io/ServiceTiers/BASEDONNEE/McW3/setup/McW3LauncherSetup2.0.61.exe"; // Remplacez par l'URL de votre fichier
+            const fileName = "McW3 Launcher Setup 2.0.61.exe"; // Nom sous lequel le fichier sera téléchargé
+
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = fileName;
+            link.click();
+        });
+    </script>
     <script>
         function changeLanguage() {
             var language = document.getElementById('language').value;
