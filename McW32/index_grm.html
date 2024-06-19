@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McW3 Call of Duty in Minecraft</title>
+    <link rel="shortcut icon" href="icon.png" type="image/png">
+    <style>
+        @font-face {
+            font-family: 'solano';
+            src: url('solano.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: url(background.png) no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: brightness(0.5) blur(3px);
+            user-select: none;
+            font-family: 'solano';
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 8%;
+            height: 10%;
+            background: linear-gradient(180deg, #0000008a 25%, transparent);
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            margin-right: 30px;
+            height: 45px;
+        }
+
+        .separator {
+            width: 1px;
+            height: 30px;
+            background-color: #e0e0e0;
+            margin-right: 30px;
+        }
+
+        .right select {
+            font-size: 16px;
+            color: aliceblue;
+            background: none;
+            border: none;
+        }
+
+        option {
+            background-color: rgb(53, 53, 53);
+            border: solid 1px aqua;
+        }
+
+        .content {
+            padding: 20px;
+            color: #fff;
+            flex-grow: 1;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content h1,
+        p {
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .content h1 {
+            font-size: 5vw;
+        }
+
+        .button {
+            padding: 0;
+            margin: 1vw;
+            border: 1px solid aqua;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            margin: 3vw;
+            width: 12rem;
+            font-family: 'solano';
+        }
+
+        .button button {
+            height: inherit;
+            background-color: rgba(0, 255, 255, 0.19);
+            color: #e0e0e0;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            width: inherit;
+            font-family: 'solano';
+            font-size: large;
+            letter-spacing: 2px;
+        }
+
+        .button button:hover {
+            color: goldenrod;
+        }
+
+        .button p {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="mcw3TRANS.png" alt="Logo 1" class="logo">
+            <div class="separator"></div>
+            <img src="WarzoneMCS1.png" alt="Logo 2" class="logo">
+        </div>
+        <div class="right">
+            <select id="language" name="language" onchange="changeLanguage()">
+                <option value="grm">GRM</option>
+                <option value="fra">FRA</option>
+                <option value="eng">ENG</option>
+            </select>
+        </div>
+    </header>
+    <div class="content">
+        <h1>BIS ZUM ENDE KÄMPFEN</h1>
+        <p>Entdecken Sie Modern Warfare 3 in Minecraft in einem neuen Licht!</p>
+        <div class="button">
+            <button id="downloadButton">herunterladen</button>
+            <div>
+                <p>2.0.61</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const fileUrl = "cine-production.github.io/ServiceTiers/BASEDONNEE/McW3/setup/McW3LauncherSetup2.0.61.exe"; // Remplacez par l'URL de votre fichier
+            const fileName = "McW3 Launcher Setup 2.0.61.exe"; // Nom sous lequel le fichier sera téléchargé
+
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = fileName;
+            link.click();
+        });
+    </script>
+    <script>
+        function changeLanguage() {
+            var language = document.getElementById('language').value;
+            // Simuler le changement de langue en redirigeant vers une page spécifique pour chaque langue
+            if (language === 'eng') {
+                window.location.href = 'index_eng.html'; // Modifier avec l'URL réelle de la version anglaise
+            } else if (language === 'fra') {
+                window.location.href = 'index.html'; // Modifier avec l'URL réelle de la version française
+            } else if (language === 'grm') {
+                window.location.href = 'index_grm.html'; // Modifier avec l'URL réelle de la version allemande
+            }
+        }
+    </script>
+</body>
+
+</html>

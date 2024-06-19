@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header avec Logos et Sélecteur de Langue</title>
+    <title>McW3 Call of Duty dans Minecraft</title>
+    <link rel="shortcut icon" href="icon.png" type="image/png">
     <style>
-         @font-face {
+        @font-face {
             font-family: 'solano';
             src: url('solano.ttf') format('truetype');
         }
@@ -40,7 +41,7 @@
         }
 
         .logo {
-            margin-right: 10px;
+            margin-right: 30px;
             height: 45px;
         }
 
@@ -48,60 +49,77 @@
             width: 1px;
             height: 30px;
             background-color: #e0e0e0;
-            margin-right: 10px;
+            margin-right: 30px;
         }
 
         .right select {
-    font-size: 16px;
-    color: aliceblue;
-    background: none;
-    border: none;
-}
+            font-size: 16px;
+            color: aliceblue;
+            background: none;
+            border: none;
+        }
 
-option {
-    background-color: rgb(53, 53, 53);
-    border: solid 1px aqua;
-}
+        option {
+            background-color: rgb(53, 53, 53);
+            border: solid 1px aqua;
+        }
 
         .content {
-    padding: 20px;
-    color: #fff;
-    flex-grow: 1;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-direction: column;
-}
-.content h1, p {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-}
-.content h1 {
-    font-size: 5vw;
-}
-.button {
-    padding: 0;
-    margin: 1vw;
-    border: 1px solid aqua;
-    display: flex;
-    align-items: center;
-    height: 40px;
-margin: 3vw;
-    }
-.button button {
-    height: inherit;
-    background-color: rgba(0, 255, 255, 0.19);
-    color: #e0e0e0;
-    font-weight: 500;
-    cursor: pointer;
-}
-.button p {
-    margin: 10px;
-}
+            padding: 20px;
+            color: #fff;
+            flex-grow: 1;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content h1,
+        p {
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .content h1 {
+            font-size: 5vw;
+        }
+
+        .button {
+            padding: 0;
+            margin: 1vw;
+            border: 1px solid aqua;
+            display: flex;
+            align-items: center;
+            height: 40px;
+            margin: 3vw;
+            width: 12rem;
+            font-family: 'solano';
+        }
+
+        .button button {
+            height: inherit;
+            background-color: rgba(0, 255, 255, 0.19);
+            color: #e0e0e0;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            width: inherit;
+            font-family: 'solano';
+            font-size: large;
+            letter-spacing: 2px;
+        }
+
+        .button button:hover {
+            color: goldenrod;
+        }
+
+        .button p {
+            margin: 10px;
+        }
     </style>
 </head>
 
@@ -124,10 +142,23 @@ margin: 3vw;
         <h1>BATAILLEZ JUSQU'AU BOUT</h1>
         <p>Explorez Modern Warfare 3 sous un nouveau jour dans Minecraft !</p>
         <div class="button">
-            <button>DOWNLOAD</button>
-            <div><p>2.0.63</p></div>
+            <button id="downloadButton">TELECHARGER</button>
+            <div>
+                <p>2.0.61</p>
+            </div>
         </div>
     </div>
+    <script>
+        document.getElementById("downloadButton").addEventListener("click", function() {
+            const fileUrl = "setup/McW3LauncherSetup2.0.61.exe"; // Remplacez par l'URL de votre fichier
+            const fileName = "McW3 Launcher Setup 2.0.61.exe"; // Nom sous lequel le fichier sera téléchargé
+
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.download = fileName;
+            link.click();
+        });
+    </script>
     <script>
         function changeLanguage() {
             var language = document.getElementById('language').value;
