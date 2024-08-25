@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration des Webcams avec l'API Windy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Exploration des Webcams avec l'API Windy</h1>
+
+        <!-- Sélection de la catégorie -->
+        <div id="categories-container">
+            <h2>Choisissez une catégorie</h2>
+            <select id="categories" onchange="fetchWebcamsByCategory()">
+                <option value="">--Sélectionnez une catégorie--</option>
+            </select>
+        </div>
+
+        <!-- Section pour afficher les webcams -->
+        <div id="webcams-container">
+            <h2>Webcams</h2>
+            <div id="webcams"></div>
+        </div>
+
+        <!-- Section pour afficher les détails de la webcam -->
+        <div id="webcam-details-container" style="display:none;">
+            <h2>Détails de la Webcam</h2>
+            <div id="webcam-details"></div>
+        </div>
+    </div>
+
+    <!-- Script JavaScript pour utiliser l'API Windy -->
+    <script>
+        // Clé API de Windy
+        const apiKey = 'lBqYrzdjgNzWbzMEM2Ba99OchQQJpXCM';
+
+        // Fonction pour obtenir les catégories à partir de l'API
+        async function fetchCategories() {
+            const url = `https://api.windy.com/api/webcams/v2/list/categories?key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.result && data.result.categories) {
+                    populateCategories(data.result.categories);
+                } else {
+                    console.error('Erreur lors de la récupération des catégories.');
+                }
+            } catch (error) {
+                console.error('Erreur lors de la récupération des catégories:', error);
+            }
+        }
+
+        // Fonction pour remplir la liste déroulante des catégories
+        function populateCategories(categories) {
+            const select = document.getElementById('categories');
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.id;
+                option.textContent = category.name;
+                select.appendChild(option);
+            });
+        }
+
+        // Fonction pour obtenir des webcams par catégorie
+        async function fetchWebcamsByCategory() {
+            const categoryId = document.getElementById('categories').value;
+            if (!categoryId) return;
+
+            const url = `https://api.windy.com/api/webcams/v2/list/category=${categoryId}?include=categories,images,location,player,urls&key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.result && data.result.webcams) {
+                    displayWebcams(data.result.webcams);
+                } else {
+                    console.error('Aucune webcam trouvée pour cette catégorie.');
+                    document.getElementById('webcams').innerHTML = '<p>Aucune webcam trouvée pour cette catégorie.</p>';
+                }
+            } catch (error) {
+                console.error('Erreur lors de la récupération des webcams:', error);
+            }
+        }
+
+        // Fonction pour afficher les webcams sur la page
+        function displayWebcams(webcams) {
+            const container = document.getElementById('webcams');
+            container.innerHTML = ''; // Effacer le contenu précédent
+
+            webcams.forEach(webcam => {
+                const webcamDiv = document.createElement('div');
+                webcamDiv.className = 'webcam';
+                webcamDiv.innerHTML = `
+                    <h3>${webcam.title}</h3>
+                    <button onclick="fetchWebcamDetails(${webcam.id})">Voir les détails</button>
+                `;
+                container.appendChild(webcamDiv);
+            });
+        }
+
+        // Fonction pour obtenir les détails d'une webcam spécifique
+        async function fetchWebcamDetails(webcamId) {
+            const url = `https://api.windy.com/api/webcams/v2/webcams/${webcamId}?include=categories,images,location,player,urls&key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.result && data.result.webcams && data.result.webcams.length > 0) {
+                    displayWebcamDetails(data.result.webcams[0]);
+                } else {
+                    console.error('Erreur lors de la récupération des détails de la webcam.');
+                    document.getElementById('webcam-details').innerHTML = '<p>Erreur lors de la récupération des détails de la webcam.</p>';
+                }
+            } catch (error) {
+                console.error('Erreur lors de la récupération des détails de la webcam:', error);
+            }
+        }
+
+        // Fonction pour afficher les détails de la webcam sur la page
+        function displayWebcamDetails(webcam) {
+            const container = document.getElementById('webcam-details');
+            container.innerHTML = ''; // Effacer le contenu précédent
+
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://webcams.windy.com/webcams/public/embed/player/${webcam.id}`;
+            iframe.width = "640";
+            iframe.height = "480";
+            iframe.allow = 'autoplay; fullscreen';
+
+            container.appendChild(iframe);
+            document.getElementById('webcam-details-container').style.display = 'block';
+        }
+
+        // Charger les catégories lorsque le DOM est prêt
+        document.addEventListener('DOMContentLoaded', fetchCategories);
+    </script>
+</body>
+</html>
