@@ -6,21 +6,21 @@ const firebaseConfig = {
   apiKey: "AIzaSyBzPI54XTLtCTFXlBlIkp7257Bri6BXrOc",
   authDomain: "testpush-ad174.firebaseapp.com",
   projectId: "testpush-ad174",
-  storageBucket: "testpush-ad174.firebasestorage.app",
+  storageBucket: "testpush-ad174.appspot.com",
   messagingSenderId: "197083996622",
   appId: "1:197083996622:web:ba9cf0258de13b80014b9f"
 };
 
-// Initialiser Firebase
+// Initialisation Firebase
 firebase.initializeApp(firebaseConfig);
 
 const messaging = firebase.messaging();
 
 // Gestion des notifications en arrière-plan
 messaging.onBackgroundMessage((payload) => {
-  console.log("Notification en arrière-plan reçue : ", payload);
+  console.log("Message en arrière-plan :", payload);
   self.registration.showNotification(payload.notification.title, {
     body: payload.notification.body,
-    icon: payload.notification.icon,
+    icon: "/favicon.png", // Icône personnalisée
   });
 });

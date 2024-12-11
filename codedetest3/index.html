@@ -208,56 +208,12 @@
             </svg>
         </a>
     </nav>
-    <h1>PWA avec Notifications Push</h1>
-    <button id="enableNotifications">Activer les notifications</button>
-    
+    <h1>Notifications Firebase PWA</h1>
+  <button id="enableNotifications">Activer les notifications</button>
+
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-messaging.js"></script>
   <script src="push.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs
-        import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-messaging.js";
-
-// Configuration Firebase
-const firebaseConfig = {
-  apiKey: "AIzaSyBzPI54XTLtCTFXlBlIkp7257Bri6BXrOc",
-  authDomain: "testpush-ad174.firebaseapp.com",
-  projectId: "testpush-ad174",
-  storageBucket: "testpush-ad174.firebasestorage.app",
-  messagingSenderId: "197083996622",
-  appId: "1:197083996622:web:ba9cf0258de13b80014b9f"
-};
-
-// Clé publique VAPID
-const vapidKey = "BP38CroGbEeGd67VsdlFFdPBKBDDnJYW2isUfpWm1beL8PeuH8yfY1alUbo5PErgU1RJrF5GYCsIqKQv1gqRUk"; // Remplacez avec la vôtre
-
-// Initialisation Firebase
-const app = initializeApp(firebaseConfig);
-const messaging = getMessaging(app);
-
-// Demande d'autorisation pour les notifications
-async function requestPermission() {
-  try {
-    const currentToken = await getToken(messaging, { vapidKey });
-    if (currentToken) {
-      console.log("Token récupéré :", currentToken);
-      // Envoyez ce token à votre serveur pour envoyer des notifications
-    } else {
-      console.log("Aucun token disponible. Autorisez les notifications.");
-    }
-  } catch (error) {
-    console.error("Erreur lors de la récupération du token :", error);
-  }
-}
-
-// Écoute des messages entrants
-onMessage(messaging, (payload) => {
-  console.log("Message reçu : ", payload);
-  // Affichez une notification personnalisée ici
-});
-
-// Demander la permission pour activer les notifications
-requestPermission();
-
-      </script>
       
     </div>
 </body>
