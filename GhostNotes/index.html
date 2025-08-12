@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GhostNotes — Authentification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>👻 GhostNotes</h1>
+  </header>
+
+  <main>
+    <section id="authSection">
+      <button id="googleLoginBtn">Se connecter avec Google</button>
+
+      <hr />
+
+      <h3>Connexion / Inscription Email</h3>
+
+      <input type="email" id="email" placeholder="Email" autocomplete="username" />
+      <input type="password" id="password" placeholder="Mot de passe" autocomplete="current-password" />
+
+      <div class="auth-buttons">
+        <button id="loginEmailBtn">Se connecter</button>
+        <button id="signupEmailBtn">Créer un compte</button>
+      </div>
+
+      <p id="authError" class="error"></p>
+    </section>
+
+    <section id="userSection" style="display:none;">
+      <p>Connecté en tant que <span id="userEmail"></span></p>
+      <button id="logoutBtn">Déconnexion</button>
+
+      <section id="noteForm">
+        <textarea id="noteText" placeholder="Votre note secrète..."></textarea>
+        <button id="saveNote">📍 Sauvegarder à ma position</button>
+      </section>
+
+      <section id="notesList"></section>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

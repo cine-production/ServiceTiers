@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+input, textarea {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 0.3em 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+}
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+button {
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  margin: 0.3em 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #ff8533;
+}
+
+.auth-buttons {
+  margin-top: 0.5em;
+}
+
+#error, .error {
+  color: #f44336;
+  margin-top: 0.5em;
+}
+
+.note {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  margin: 10px auto;
+  padding: 10px;
+  max-width: 600px;
+  text-align: left;
+}
