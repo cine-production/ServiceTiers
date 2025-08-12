@@ -180,7 +180,7 @@ async function loadNotes() {
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const dist = getDistance(userLat, userLng, data.lat, data.lng);
-        if (dist < 0.005) {  // 5 mètres = 0.005 km
+        if (dist < 0.900) {  // 900 mètres = 0.900 km
           const div = document.createElement("div");
           div.className = "note";
           div.textContent = data.text;
@@ -212,3 +212,4 @@ function getDistance(lat1, lon1, lat2, lon2) {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js");
 }
+
