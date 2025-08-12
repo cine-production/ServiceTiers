@@ -145,6 +145,27 @@ saveNoteBtn.addEventListener("click", () => {
   );
 });
 
+const requestLocationBtn = document.getElementById("requestLocationBtn");
+
+requestLocationBtn.addEventListener("click", () => {
+  if (!navigator.geolocation) {
+    alert("La géolocalisation n'est pas supportée par ce navigateur.");
+    return;
+  }
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      alert(`Localisation autorisée : ${position.coords.latitude.toFixed(5)}, ${position.coords.longitude.toFixed(5)}`);
+      // Tu peux éventuellement relancer le chargement des notes ici
+      loadNotes();
+    },
+    (error) => {
+      alert("Erreur de localisation : " + error.message);
+    },
+    { enableHighAccuracy: true, timeout: 10000 }
+  );
+});
+
+
 // Chargement notes proches
 async function loadNotes() {
   if (!navigator.geolocation) return;
