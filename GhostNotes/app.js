@@ -38,6 +38,8 @@ const noteText = document.getElementById("noteText");
 const saveNoteBtn = document.getElementById("saveNote");
 const notesList = document.getElementById("notesList");
 
+let refreshIntervalId = null;
+
 // Connexion Google
 googleLoginBtn.addEventListener("click", async () => {
   authError.textContent = "";
@@ -93,11 +95,20 @@ onAuthStateChanged(auth, (user) => {
     userSection.style.display = "block";
     userEmailSpan.textContent = user.email || user.displayName || "Utilisateur";
     loadNotes();
+
+    if (refreshIntervalId) clearInterval(refreshIntervalId);
+    refreshIntervalId = setInterval(loadNotes, 4000); // toutes les 4 secondes
+
   } else {
     authSection.style.display = "block";
     userSection.style.display = "none";
     notesList.innerHTML = "";
     noteText.value = "";
+
+    if (refreshIntervalId) {
+      clearInterval(refreshIntervalId);
+      refreshIntervalId = null;
+    }
   }
 });
 
@@ -137,16 +148,18 @@ saveNoteBtn.addEventListener("click", () => {
 // Chargement notes proches
 async function loadNotes() {
   if (!navigator.geolocation) return;
+
   navigator.geolocation.getCurrentPosition(async (position) => {
     try {
       const querySnapshot = await getDocs(collection(db, "notes"));
       notesList.innerHTML = "";
       const userLat = position.coords.latitude;
       const userLng = position.coords.longitude;
+
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const dist = getDistance(userLat, userLng, data.lat, data.lng);
-        if (dist < 0.05) {
+        if (dist < 0.005) {  // 5 mètres = 0.005 km
           const div = document.createElement("div");
           div.className = "note";
           div.textContent = data.text;
