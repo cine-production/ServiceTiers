@@ -147,7 +147,6 @@ saveNoteBtn.addEventListener("click", () => {
 
 const requestLocationBtn = document.getElementById("requestLocationBtn");
 
-
 requestLocationBtn.addEventListener("click", () => {
   if (!navigator.geolocation) {
     alert("La géolocalisation n'est pas supportée par ce navigateur.");
@@ -164,7 +163,6 @@ requestLocationBtn.addEventListener("click", () => {
     },
     { enableHighAccuracy: true, timeout: 10000 }
   );
-});
 
 
 // Chargement notes proches
