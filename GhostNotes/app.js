@@ -163,7 +163,7 @@ requestLocationBtn.addEventListener("click", () => {
     },
     { enableHighAccuracy: true, timeout: 10000 }
   );
-
+});
 
 // Chargement notes proches
 async function loadNotes() {
