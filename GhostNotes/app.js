@@ -179,7 +179,7 @@ async function loadNotes() {
       querySnapshot.forEach((doc) => {
         const data = doc.data();
         const dist = getDistance(userLat, userLng, data.lat, data.lng);
-        if (dist < 0.00100) {  // 677 mètres = 0.677 km
+        if (dist < 0.677) {  // 677 mètres = 0.677 km
           const div = document.createElement("div");
           div.className = "note";
           div.textContent = data.text;
