@@ -1,49 +1,174 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GhostNotes — Authentification</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GhostNotes</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
+    header { background: #222; color: #fff; padding: 10px; text-align: center; }
+    main { padding: 15px; }
+    #login-section, #app-section { max-width: 500px; margin: auto; }
+    button { padding: 10px 15px; margin: 5px; border: none; border-radius: 6px; cursor: pointer; }
+    .google-btn { background: #4285F4; color: white; }
+    .email-btn { background: #34A853; color: white; }
+    .logout-btn { background: #d9534f; color: white; }
+    .loc-btn { background: #f0ad4e; color: white; }
+    .note { background: white; padding: 10px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+  </style>
 </head>
 <body>
   <header>
-    <h1>👻 GhostNotes</h1>
+    <h1>GhostNotes</h1>
   </header>
-
   <main>
-    <section id="authSection">
-      <button id="googleLoginBtn">Se connecter avec Google</button>
-
-      <hr />
-
-      <h3>Connexion / Inscription Email</h3>
-
-      <input type="email" id="email" placeholder="Email" autocomplete="username" />
-      <input type="password" id="password" placeholder="Mot de passe" autocomplete="current-password" />
-
-      <div class="auth-buttons">
-        <button id="loginEmailBtn">Se connecter</button>
-        <button id="signupEmailBtn">Créer un compte</button>
-      </div>
-
-      <p id="authError" class="error"></p>
+    <!-- Section connexion -->
+    <section id="login-section">
+      <h2>Connexion</h2>
+      <button class="google-btn" onclick="loginGoogle()">Se connecter avec Google</button><br>
+      <input type="email" id="email" placeholder="Email"><br>
+      <input type="password" id="password" placeholder="Mot de passe"><br>
+      <button class="email-btn" onclick="loginEmail()">Connexion Email</button>
+      <button class="email-btn" onclick="signupEmail()">Créer un compte</button>
     </section>
 
-    <section id="userSection" style="display:none;">
-      <p>Connecté en tant que <span id="userEmail"></span></p>
-      <button id="logoutBtn">Déconnexion</button>
-      <button id="requestLocationBtn">🗺️ Demander la localisation</button>
+    <!-- Section application -->
+    <section id="app-section" style="display:none;">
+      <h2>Bienvenue sur GhostNotes</h2>
+      <button class="logout-btn" onclick="logout()">Déconnexion</button>
+      <button class="loc-btn" onclick="requestLocation()">Activer la localisation</button>
 
-      <section id="noteForm">
-        <textarea id="noteText" placeholder="Votre note secrète..."></textarea>
-        <button id="saveNote">📍 Sauvegarder à ma position</button>
-      </section>
+      <h3>Messages visibles</h3>
+      <div id="messages"></div>
 
-      <section id="notesList"></section>
+      <h3>Déposer une note</h3>
+      <textarea id="noteText" placeholder="Votre message..."></textarea><br>
+      <button onclick="addNote()">Déposer ici</button>
     </section>
   </main>
 
-  <script type="module" src="app.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <script>
+    // --- CONFIG FIREBASE (remplace par tes vraies clés) ---
+    const firebaseConfig = {
+  apiKey: "AIzaSyBmcCZB3Nrohxl3OWMolTAMSg_P1wNVV0g",
+  authDomain: "phuic-7db7b.firebaseapp.com",
+  databaseURL: "https://phuic-7db7b-default-rtdb.firebaseio.com",
+  projectId: "phuic-7db7b",
+  storageBucket: "phuic-7db7b.firebasestorage.app",
+  messagingSenderId: "657915171663",
+  appId: "1:657915171663:web:07caba395aaec597fa2b3a",
+  measurementId: "G-7MFCBQ6TEN"
+};
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    let currentUser = null;
+    let currentPosition = null;
+    const RADIUS_METERS = 90;
+
+    // --- AUTH ---
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        document.getElementById("login-section").style.display = "none";
+        document.getElementById("app-section").style.display = "block";
+        startLocationWatcher();
+      } else {
+        currentUser = null;
+        document.getElementById("login-section").style.display = "block";
+        document.getElementById("app-section").style.display = "none";
+      }
+    });
+
+    function loginGoogle() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).catch(alert);
+    }
+    function loginEmail() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      auth.signInWithEmailAndPassword(email, password).catch(alert);
+    }
+    function signupEmail() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      auth.createUserWithEmailAndPassword(email, password).catch(alert);
+    }
+    function logout() { auth.signOut(); }
+
+    // --- LOCALISATION ---
+    function requestLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          pos => { currentPosition = pos.coords; refreshMessages(); },
+          err => alert("Erreur localisation: " + err.message),
+          { enableHighAccuracy: true }
+        );
+      } else {
+        alert("La géolocalisation n'est pas supportée");
+      }
+    }
+
+    function startLocationWatcher() {
+      setInterval(() => {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            pos => { currentPosition = pos.coords; refreshMessages(); },
+            () => {}
+          );
+        }
+      }, 10000); // toutes les 5 secondes
+    }
+
+    // --- MESSAGES ---
+    async function addNote() {
+      if (!currentPosition) return alert("Activez la localisation avant de déposer une note.");
+      const text = document.getElementById("noteText").value;
+      if (!text) return alert("Message vide !");
+      await db.collection("notes").add({
+        user: currentUser.uid,
+        text: text,
+        lat: currentPosition.latitude,
+        lng: currentPosition.longitude,
+        created: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      document.getElementById("noteText").value = "";
+      alert("Note déposée !");
+    }
+
+    async function refreshMessages() {
+      if (!currentPosition) return;
+      const snapshot = await db.collection("notes").get();
+      const container = document.getElementById("messages");
+      container.innerHTML = "";
+      snapshot.forEach(doc => {
+        const note = doc.data();
+        const dist = distance(currentPosition.latitude, currentPosition.longitude, note.lat, note.lng);
+        if (dist <= RADIUS_METERS) {
+          const div = document.createElement("div");
+          div.className = "note";
+          div.textContent = note.text;
+          container.appendChild(div);
+        }
+      });
+    }
+
+    // --- UTILS ---
+    function distance(lat1, lon1, lat2, lon2) {
+      const R = 6371000; // Terre en m
+      const dLat = (lat2-lat1) * Math.PI/180;
+      const dLon = (lon2-lon1) * Math.PI/180;
+      const a = Math.sin(dLat/2)**2 +
+                Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) *
+                Math.sin(dLon/2)**2;
+      return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    }
+  </script>
 </body>
 </html>
